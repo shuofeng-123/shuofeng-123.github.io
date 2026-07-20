@@ -2,1135 +2,724 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>武汉朔丰电子科技有限公司</title>
-    <meta name="description" content="武汉朔丰电子科技有限公司 - 电力设备、电子产品、测量测试仪器、新能源技术、智能设备、自动化设备、半导体产品开发与销售">
-    <meta name="keywords" content="朔丰电子,电力设备,测量仪器,新能源,智能设备,半导体,自动化,武汉">
+    <meta name="keywords" content="武汉朔丰电子科技有限公司"/>
+    <meta name="description" content="武汉朔丰电子科技有限公司"/>
     <style>
-        /* ===== Reset & Base ===== */
+        /* ===== Reset ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-            color: #333; background: #fff; line-height: 1.6;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif; color: #333; background: #fff; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        img { max-width: 100%; display: block; }
+        img { max-width: 100%; display: block; border: 0; }
+        .clearfix::after { content: ""; display: block; clear: both; }
+        .flex { display: flex; }
+
+        /* ===== Layout ===== */
+        .w1400 { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .w1500 { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
 
         /* ===== Colors ===== */
         :root {
-            --primary: #0055a5;
-            --primary-dark: #003d7a;
-            --primary-light: #0074d9;
-            --accent: #e55300;
-            --bg-light: #f5f7fa;
-            --bg-dark: #0a1628;
-            --text-dark: #1a1a2e;
-            --text-gray: #6b7280;
-            --text-light: #ffffff;
-            --border: #e2e8f0;
-            --shadow: 0 2px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --blue: #337ab7;
+            --blue-dark: #2c5f9e;
+            --blue-light: #5a9bd5;
+            --blue-bg: #f5f8fc;
+            --orange: #ff6600;
+            --dark: #222;
+            --gray: #666;
+            --light-gray: #999;
+            --border: #e5e5e5;
         }
 
-        /* ===== Layout ===== */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* ===== Top Bar ===== */
+        .top_head { background: #2c5f9e; color: #fff; padding: 10px 0; font-size: 14px; }
+        .top_head .w1400 { display: flex; justify-content: space-between; align-items: center; }
+        .top_heada { flex: 1; }
+        .top_headb { display: flex; align-items: center; gap: 20px; }
+        .topdh { display: flex; align-items: center; gap: 8px; }
+        .topdh img { width: 28px; height: 28px; }
+        .topdh h5 { font-size: 14px; font-weight: normal; }
+        .topdh h5 span { font-weight: bold; color: #fff; font-size: 16px; }
+        .toplink a { color: rgba(255,255,255,0.85); margin-right: 10px; font-size: 13px; }
+        .toplink a:hover { color: #fff; }
 
-        /* ===== Top Utility Bar ===== */
-        .top-bar {
-            background: var(--primary-dark); color: #fff; padding: 8px 0;
-            font-size: 0.85rem; height: 36px;
-        }
-        .top-bar-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 20px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .top-bar a { color: rgba(255,255,255,0.9); transition: color 0.2s; }
-        .top-bar a:hover { color: #fff; }
-        .top-bar-item { display: flex; align-items: center; gap: 6px; }
-        .top-bar-left { display: flex; gap: 24px; }
-        .top-bar-right { display: flex; gap: 16px; }
+        /* ===== Header ===== */
+        .header { background: #fff; padding: 15px 0; border-bottom: 2px solid var(--blue); }
+        .header .w1400 { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logoimg img { height: 50px; }
+        .logowz dd { font-size: 20px; font-weight: bold; color: var(--blue-dark); }
+        .logowz dt { font-size: 12px; color: var(--gray); }
 
-        /* ===== Header / Nav ===== */
-        .header {
-            position: sticky; top: 0; z-index: 1000;
-            background: #fff; border-bottom: 2px solid var(--primary);
-            transition: box-shadow 0.3s;
-        }
-        .header.scrolled { box-shadow: var(--shadow-lg); }
-        .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            height: 70px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
-        }
-        .logo {
-            display: flex; align-items: center; gap: 12px;
-        }
-        .logo-icon {
-            width: 42px; height: 42px; background: var(--primary);
-            border-radius: 6px; display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 22px; font-weight: 900;
-        }
-        .logo-text {
-            font-size: 1.1rem; font-weight: 700; color: var(--primary-dark);
-            line-height: 1.2;
-        }
-        .logo-text small { font-size: 0.7rem; color: var(--text-gray); font-weight: 400; display: block; }
-        .nav-links { display: flex; gap: 0; }
-        .nav-links a {
-            font-size: 0.92rem; color: var(--text-dark); transition: all 0.2s;
-            padding: 22px 18px; position: relative; font-weight: 500;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-        .nav-links a.active::after, .nav-links a:hover::after {
-            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 60%; height: 2px; background: var(--primary);
-        }
-        .mobile-toggle { display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary-dark); }
+        /* ===== Nav ===== */
+        .x-menu { display: flex; align-items: center; }
+        .x-menu > li { position: relative; }
+        .x-menu > li > a { display: block; padding: 10px 18px; font-size: 15px; color: #333; font-weight: 500; transition: all 0.3s; }
+        .x-menu > li:hover > a, .x-menu > li.active > a { color: var(--blue); background: var(--blue-bg); }
+        .x-sub-menu { position: absolute; top: 100%; left: 0; background: #fff; min-width: 160px; border-top: 2px solid var(--blue); box-shadow: 0 3px 10px rgba(0,0,0,0.15); display: none; z-index: 100; }
+        .x-menu > li:hover .x-sub-menu { display: block; }
+        .x-sub-menu li a { display: block; padding: 10px 16px; font-size: 14px; color: #555; border-bottom: 1px solid #eee; transition: 0.3s; }
+        .x-sub-menu li a:hover { color: var(--blue); background: var(--blue-bg); }
 
-        /* ===== Hero Banner ===== */
-        .hero-banner {
-            position: relative; height: 520px; overflow: hidden;
-        }
-        .hero-slides { display: flex; transition: transform 0.5s ease; height: 100%; }
-        .hero-slide {
-            min-width: 100%; height: 100%; position: relative;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .hero-slide-bg {
-            position: absolute; inset: 0; z-index: 0;
-        }
-        .hero-slide:nth-child(1) .hero-slide-bg {
-            background: linear-gradient(135deg, #001a3a 0%, var(--primary-dark) 40%, var(--primary) 100%);
-        }
-        .hero-slide:nth-child(2) .hero-slide-bg {
-            background: linear-gradient(135deg, #002050 0%, #003d7a 40%, var(--primary-light) 100%);
-        }
-        .hero-slide:nth-child(3) .hero-slide-bg {
-            background: linear-gradient(135deg, #0a1628 0%, var(--primary-dark) 60%, #0066cc 100%);
-        }
-        .hero-slide-content {
-            position: relative; z-index: 1; color: #fff; text-align: center;
-            padding: 0 40px; max-width: 800px;
-        }
-        .hero-slide-content h2 {
-            font-size: 2.4rem; font-weight: 700; margin-bottom: 16px;
-            letter-spacing: 2px;
-        }
-        .hero-slide-content p {
-            font-size: 1.05rem; opacity: 0.85; line-height: 1.8; margin-bottom: 30px;
-        }
-        .hero-tags {
-            display: flex; gap: 20px; justify-content: center; margin-top: 24px;
-        }
-        .hero-tag {
-            padding: 10px 24px; border-radius: 4px;
-            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.88rem; letter-spacing: 1px;
-        }
-        .hero-btn {
-            display: inline-block; padding: 12px 32px; background: var(--accent);
-            color: #fff; border-radius: 4px; font-size: 0.92rem; font-weight: 600;
-            transition: all 0.3s; margin-top: 8px;
-        }
-        .hero-btn:hover { background: #cc4400; transform: translateY(-2px); }
-        .hero-nav {
-            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-            display: flex; gap: 10px; z-index: 2;
-        }
-        .hero-dot {
-            width: 36px; height: 4px; background: rgba(255,255,255,0.3);
-            cursor: pointer; transition: background 0.3s; border-radius: 2px;
-        }
-        .hero-dot.active { background: #fff; }
+        /* ===== Banner ===== */
+        .x-banner { overflow: hidden; position: relative; }
+        .banner-carousel { position: relative; overflow: hidden; }
+        .banner-track { display: flex; transition: transform 0.6s ease; }
+        .banner-item { flex: 0 0 100%; }
+        .banner-item img { width: 100%; height: auto; min-height: 400px; object-fit: cover; }
+        .banner-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+        .banner-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: 0.3s; }
+        .banner-dot.active { background: #fff; transform: scale(1.2); }
+        .banner-arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 10; }
+        .banner-arrow { width: 40px; height: 60px; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; transition: 0.3s; }
+        .banner-arrow:hover { background: rgba(0,0,0,0.6); }
+
+        /* ===== Section Title ===== */
+        .ccb { padding: 40px 0 0; }
+        .ccb h3 { font-size: 24px; color: var(--blue-dark); text-align: center; position: relative; padding-bottom: 15px; }
+        .ccb h3::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--blue); }
 
         /* ===== About Section ===== */
-        .about-section {
-            padding: 60px 0; background: #fff;
-        }
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
-        }
-        .about-image {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            border-radius: 8px; height: 320px; display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 2rem; font-weight: 800; letter-spacing: 4px;
-            position: relative; overflow: hidden;
-        }
-        .about-image::after {
-            content: ''; position: absolute; top: -30%; right: -20%;
-            width: 300px; height: 300px; border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-        }
-        .about-text h3 {
-            font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 16px;
-            position: relative; padding-bottom: 12px;
-        }
-        .about-text h3::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 50px; height: 3px; background: var(--primary);
-        }
-        .about-text p {
-            color: var(--text-gray); line-height: 1.8; margin-bottom: 12px; font-size: 0.95rem;
-        }
-        .about-more {
-            display: inline-flex; align-items: center; gap: 6px;
-            color: var(--primary); font-size: 0.92rem; margin-top: 16px;
-            border: 1px solid var(--primary); padding: 8px 20px; border-radius: 4px;
-            transition: all 0.3s;
-        }
-        .about-more:hover { background: var(--primary); color: #fff; }
+        .cc4 { padding: 40px 0 60px; background: var(--blue-bg); }
+        .cc4 .w1400 { display: flex; gap: 40px; align-items: stretch; }
+        .c4img { flex: 0 0 45%; overflow: hidden; }
+        .c4img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+        .c4ab { flex: 1; }
+        .c4ab h3 { font-size: 22px; color: var(--blue-dark); margin-bottom: 10px; }
+        .c4ab h4 { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
+        .c4ab .abwz { font-size: 15px; color: #555; line-height: 2em; }
+        .c4mor { display: inline-block; margin-top: 20px; padding: 10px 30px; background: var(--blue); color: #fff; font-size: 14px; border-radius: 4px; transition: 0.3s; }
+        .c4mor:hover { background: var(--blue-dark); }
 
-        /* ===== Business Scope (Tab + Carousel) ===== */
-        .scope-section {
-            padding: 60px 0; background: var(--bg-light);
-        }
-        .section-header {
-            text-align: center; margin-bottom: 40px;
-        }
-        .section-header h2 {
-            font-size: 1.8rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;
-        }
-        .section-header .en-title {
-            font-size: 0.75rem; color: var(--text-gray); letter-spacing: 2px;
-            text-transform: uppercase; margin-bottom: 12px;
-        }
-        .section-header .divider {
-            width: 50px; height: 3px; background: var(--primary); margin: 0 auto 12px; border-radius: 2px;
-        }
-        .section-header p { color: var(--text-gray); font-size: 0.95rem; }
+        /* ===== Business Tab ===== */
+        .promenu2 { margin-bottom: 20px; }
+        .tab-li { display: flex; justify-content: center; gap: 0; }
+        .tab-li li { flex: 1; max-width: 200px; }
+        .tab-li li a { display: block; padding: 12px 20px; text-align: center; font-size: 16px; color: #555; background: #f0f0f0; border: 1px solid #e5e5e5; transition: 0.3s; }
+        .tab-li li.active a, .tab-li li:hover a { background: var(--blue); color: #fff; border-color: var(--blue); }
+        .tab-con { position: relative; }
+        .tab-main { display: none; }
+        .tab-main.active { display: block; }
 
-        /* Tabs */
-        .scope-tabs {
-            display: flex; gap: 0; margin-bottom: 30px; justify-content: center;
-        }
-        .scope-tab {
-            padding: 12px 40px; font-size: 0.95rem; font-weight: 600;
-            background: #fff; color: var(--text-dark); cursor: pointer;
-            border: 2px solid var(--border); transition: all 0.3s;
-            position: relative;
-        }
-        .scope-tab:first-child { border-radius: 4px 0 0 4px; }
-        .scope-tab:last-child { border-radius: 0 4px 4px 0; }
-        .scope-tab.active {
-            background: var(--primary); color: #fff; border-color: var(--primary);
-        }
-        .scope-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+        /* ===== Product List ===== */
+        .pro_list { display: flex; gap: 20px; flex-wrap: wrap; }
+        .pro_list li { flex: 0 0 calc(33.33% - 14px); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: 0.3s; }
+        .pro_list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .pro_list li .com-img { display: block; overflow: hidden; }
+        .pro_list li .com-img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
+        .pro_list li:hover .com-img img { transform: scale(1.05); }
+        .pro_list li h2 { padding: 12px 10px; font-size: 15px; text-align: center; }
+        .pro_list li h2 a { color: #333; transition: 0.3s; }
+        .pro_list li h2 a:hover { color: var(--blue); }
 
-        /* Product Carousel */
-        .scope-carousel-wrap {
-            position: relative; overflow: hidden;
-        }
-        .scope-carousel {
-            display: flex; gap: 20px; transition: transform 0.4s ease;
-            padding: 0;
-        }
-        .scope-panel { display: none; }
-        .scope-panel.active { display: block; }
-        .product-slide {
-            min-width: calc(33.333% - 14px); background: #fff;
-            border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        .product-slide:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .product-slide-img {
-            height: 180px; display: flex; align-items: center; justify-content: center;
-            font-size: 3rem; color: #fff; position: relative;
-        }
-        .product-slide-img.power { background: linear-gradient(135deg, #003d7a, var(--primary)); }
-        .product-slide-img.measure { background: linear-gradient(135deg, #1a56a8, #2d7dd2); }
-        .product-slide-img.elec { background: linear-gradient(135deg, #0074d9, #3399ff); }
-        .product-slide-img.new-energy { background: linear-gradient(135deg, #006633, #00aa55); }
-        .product-slide-img.smart { background: linear-gradient(135deg, #555, #888); }
-        .product-slide-img.auto { background: linear-gradient(135deg, #0055a5, #0074d9); }
-        .product-slide-img.semi { background: linear-gradient(135deg, #7a1a1a, #cc3333); }
-        .product-slide-img.ic { background: linear-gradient(135deg, #3a0066, #6600cc); }
-        .product-slide-img.sensor { background: linear-gradient(135deg, #005588, #0088bb); }
-        .product-slide-body {
-            padding: 16px 20px;
-        }
-        .product-slide-body h4 {
-            font-size: 0.95rem; color: var(--text-dark); margin-bottom: 8px; font-weight: 600;
-        }
-        .product-slide-body p {
-            font-size: 0.82rem; color: var(--text-gray); line-height: 1.6;
-        }
-        .carousel-controls {
-            display: flex; justify-content: center; gap: 8px; margin-top: 24px;
-        }
-        .carousel-btn {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: var(--primary); color: #fff; border: none; cursor: pointer;
-            font-size: 1.2rem; transition: all 0.3s;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .carousel-btn:hover { background: var(--primary-dark); }
+        /* ===== 3 Advantages ===== */
+        .c2 { background: linear-gradient(135deg, #2c5f9e 0%, #337ab7 100%); padding: 60px 0; color: #fff; }
+        .c2 .w1400 { display: flex; gap: 40px; align-items: stretch; }
+        .c2a { flex: 1; }
+        .c2abt dd { font-size: 28px; margin-bottom: 10px; }
+        .c2abt dd span { color: var(--orange); }
+        .c2abt dt { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+        .c2ays li { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .c2ays li .img { flex: 0 0 50px; }
+        .c2ays li .img img { width: 50px; height: 50px; }
+        .c2ays li .liwz h3 { font-size: 18px; margin-bottom: 5px; }
+        .c2ays li .liwz p { font-size: 13px; color: rgba(255,255,255,0.8); }
+        .c2dh { display: flex; align-items: center; gap: 15px; margin-top: 30px; }
+        .c2dha { display: flex; align-items: center; gap: 5px; font-size: 16px; }
+        .c2dha img { width: 22px; height: 22px; }
+        .c2dha span { color: var(--orange); font-size: 22px; font-weight: bold; }
+        .c2dhb { display: inline-block; padding: 10px 25px; background: var(--orange); color: #fff; font-size: 15px; border-radius: 4px; transition: 0.3s; }
+        .c2dhb:hover { background: #e55e00; }
+        .c2b { flex: 0 0 40%; }
+        .c2b img { width: 100%; border-radius: 8px; }
 
-        /* ===== Advantages ===== */
-        .adv-section {
-            padding: 60px 0; background: #fff;
-        }
-        .adv-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
-        }
-        .adv-card {
-            text-align: center; padding: 40px 24px;
-            border: 1px solid var(--border); border-radius: 6px;
-            transition: all 0.3s;
-        }
-        .adv-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
-        .adv-icon {
-            width: 72px; height: 72px; border-radius: 50%;
-            background: var(--primary); color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin: 0 auto 20px;
-        }
-        .adv-card h4 { font-size: 1.15rem; color: var(--text-dark); margin-bottom: 12px; font-weight: 700; }
-        .adv-card p { color: var(--text-gray); font-size: 0.88rem; line-height: 1.7; }
-        .adv-cta {
-            margin-top: 30px; text-align: center;
-        }
-        .adv-cta-phone {
-            font-size: 0.9rem; color: var(--text-gray); margin-bottom: 12px;
-        }
-        .adv-cta-phone strong { color: var(--accent); font-size: 1.2rem; }
-        .adv-cta-btn {
-            display: inline-block; padding: 12px 36px; background: var(--accent);
-            color: #fff; border-radius: 4px; font-weight: 600; transition: all 0.3s;
-        }
-        .adv-cta-btn:hover { background: #cc4400; transform: translateY(-2px); }
-
-        /* ===== Clients ===== */
-        .clients-section {
-            padding: 60px 0; background: var(--bg-light);
-        }
-        .clients-scroll-wrap {
-            overflow: hidden; position: relative;
-        }
-        .clients-scroll {
-            display: flex; gap: 40px; animation: scrollClients 20s linear infinite;
-            width: max-content;
-        }
-        .client-logo {
-            width: 120px; height: 60px; background: #fff; border-radius: 4px;
-            border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-            font-size: 0.85rem; font-weight: 700; color: var(--text-dark);
-            flex-shrink: 0; transition: all 0.3s;
-        }
-        .client-logo:hover { border-color: var(--primary); color: var(--primary); }
-        @keyframes scrollClients {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        /* ===== Service Clients ===== */
+        .cc3 { padding: 50px 0; background: #f8f8f8; }
+        .c3bt { text-align: center; margin-bottom: 30px; }
+        .c3bt dd { font-size: 24px; color: var(--blue-dark); }
+        .case-scroll { overflow: hidden; position: relative; }
+        .case-track { display: flex; gap: 20px; animation: scrollLogos 30s linear infinite; }
+        .case-track li { flex: 0 0 180px; display: flex; align-items: center; justify-content: center; height: 80px; background: #fff; border: 1px solid #eee; border-radius: 4px; padding: 10px; }
+        .case-track li img { max-width: 140px; max-height: 50px; object-fit: contain; }
+        @keyframes scrollLogos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* ===== News ===== */
-        .news-section {
-            padding: 60px 0; background: #fff;
-        }
-        .news-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
-        }
-        .news-featured {
-            background: var(--primary-dark); border-radius: 6px; overflow: hidden;
-            color: #fff; position: relative; height: 360px;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 24px 28px;
-        }
-        .news-featured::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-        }
-        .news-featured .news-tag {
-            display: inline-block; padding: 4px 12px; background: var(--accent);
-            font-size: 0.78rem; border-radius: 2px; margin-bottom: 12px;
-            position: relative; z-index: 1;
-        }
-        .news-featured h4 {
-            font-size: 1.05rem; position: relative; z-index: 1;
-            margin-bottom: 10px; line-height: 1.5;
-        }
-        .news-featured p {
-            font-size: 0.85rem; opacity: 0.7; position: relative; z-index: 1;
-            line-height: 1.6;
-        }
-        .news-featured .news-date {
-            font-size: 0.78rem; opacity: 0.5; position: relative; z-index: 1;
-            margin-top: 8px;
-        }
-        .news-list { display: flex; flex-direction: column; gap: 16px; }
-        .news-item {
-            display: flex; gap: 16px; padding: 16px;
-            border: 1px solid var(--border); border-radius: 4px;
-            transition: all 0.3s; align-items: flex-start;
-        }
-        .news-item:hover { border-color: var(--primary); background: var(--bg-light); }
-        .news-item-date {
-            text-align: center; min-width: 56px; padding: 8px 0;
-            border: 1px solid var(--border); border-radius: 4px;
-        }
-        .news-item-date .day { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
-        .news-item-date .month { font-size: 0.75rem; color: var(--text-gray); }
-        .news-item-body h5 {
-            font-size: 0.92rem; color: var(--text-dark); margin-bottom: 6px;
-            line-height: 1.4; font-weight: 600;
-        }
-        .news-item-body p {
-            font-size: 0.82rem; color: var(--text-gray); line-height: 1.5;
-        }
-        .news-item-link {
-            display: inline-flex; align-items: center; gap: 4px;
-            color: var(--primary); font-size: 0.82rem; margin-top: 4px;
-        }
-
-        /* ===== Contact Section ===== */
-        .contact-section {
-            padding: 60px 0; background: var(--bg-light);
-        }
-        .contact-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-        }
-        .contact-info {
-            background: var(--primary-dark); border-radius: 6px; padding: 36px;
-            color: #fff;
-        }
-        .contact-info h3 { font-size: 1.3rem; margin-bottom: 24px; }
-        .contact-info-item {
-            display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px;
-        }
-        .contact-info-icon {
-            width: 36px; height: 36px; background: rgba(255,255,255,0.1);
-            border-radius: 4px; display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; font-size: 16px;
-        }
-        .contact-info-item h4 { font-size: 0.85rem; opacity: 0.6; margin-bottom: 4px; }
-        .contact-info-item p { font-size: 0.95rem; }
-        .contact-form-wrap {
-            background: #fff; border-radius: 6px; padding: 36px;
-            border: 1px solid var(--border);
-        }
-        .contact-form-wrap h3 { font-size: 1.3rem; color: var(--text-dark); margin-bottom: 24px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .form-group { margin-bottom: 16px; }
-        .form-group label { display: block; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 6px; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%; padding: 10px 14px; border-radius: 4px;
-            border: 1px solid var(--border); font-size: 0.9rem; font-family: inherit;
-            transition: border 0.3s;
-        }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none; border-color: var(--primary);
-        }
-        .form-group textarea { min-height: 100px; resize: vertical; }
-        .btn-submit {
-            width: 100%; padding: 12px; background: var(--primary); color: #fff;
-            border: none; border-radius: 4px; font-size: 0.95rem; font-weight: 600;
-            cursor: pointer; transition: background 0.3s;
-        }
-        .btn-submit:hover { background: var(--primary-dark); }
+        .cc5 { padding: 50px 0; }
+        .c5bt { text-align: center; margin-bottom: 30px; }
+        .c5bt dd { font-size: 24px; color: var(--blue-dark); }
+        .c5bt dt { font-size: 14px; color: var(--gray); }
+        .cc5 .w1400 { display: flex; gap: 30px; }
+        .cc5a { flex: 0 0 45%; display: flex; gap: 15px; }
+        .cc5a li { flex: 1; }
+        .cc5a li a { display: block; background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; }
+        .cc5a li a:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .cc5a li .img { overflow: hidden; }
+        .cc5a li .img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
+        .cc5a li a:hover .img img { transform: scale(1.05); }
+        .cc5a li h3 { padding: 12px 15px 5px; font-size: 16px; color: #333; }
+        .cc5a li p { padding: 0 15px; font-size: 13px; color: var(--gray); line-height: 1.5; }
+        .cc5a li .lirq { display: flex; justify-content: space-between; padding: 10px 15px; font-size: 12px; color: var(--light-gray); }
+        .cc5b { flex: 1; }
+        .xx-news li { padding: 12px 0; border-bottom: 1px dashed #eee; }
+        .xx-news li a { display: block; }
+        .xx-news li h3 { font-size: 15px; color: #333; margin-bottom: 5px; transition: 0.3s; }
+        .xx-news li a:hover h3 { color: var(--blue); }
+        .xx-news li p { font-size: 12px; color: var(--light-gray); }
+        .xx-news li span h5 { font-size: 13px; color: #777; line-height: 1.4; }
 
         /* ===== Footer ===== */
-        .footer {
-            background: var(--bg-dark); color: #fff; padding: 40px 0 20px;
-        }
-        .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px;
-            margin-bottom: 24px;
-        }
-        .footer-brand .logo { color: #fff; margin-bottom: 10px; }
-        .footer-brand p { opacity: 0.5; font-size: 0.82rem; line-height: 1.6; }
-        .footer h4 { font-size: 0.92rem; margin-bottom: 14px; }
-        .footer-links a {
-            display: block; font-size: 0.82rem; opacity: 0.5; margin-bottom: 8px;
-            transition: opacity 0.2s;
-        }
-        .footer-links a:hover { opacity: 1; }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 0.78rem; opacity: 0.4;
-        }
-        .footer-bottom a { color: inherit; }
+        .footer { background: #2c5f9e; color: #fff; padding: 40px 0; }
+        .footer .w1400 { display: flex; gap: 40px; }
+        .footera { flex: 1; }
+        .ftwz { font-size: 20px; font-weight: bold; margin-bottom: 15px; }
+        .dblx p { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 14px; }
+        .dblx p img { width: 18px; height: 18px; }
+        .dbfx { margin-top: 15px; }
+        .footerb { flex: 0 0 45%; display: flex; gap: 20px; }
+        .fot { flex: 1; }
+        .fot dd { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+        .fot dt { margin-bottom: 8px; }
+        .fot dt a { font-size: 14px; color: rgba(255,255,255,0.8); transition: 0.3s; }
+        .fot dt a:hover { color: #fff; }
+
+        /* ===== Copyright ===== */
+        .foot { background: #1a3d6d; color: rgba(255,255,255,0.6); padding: 15px 0; font-size: 13px; text-align: center; }
+        .foot a { color: rgba(255,255,255,0.7); }
+        .foot a:hover { color: #fff; }
+        .jszc { margin-top: 5px; }
+
+        /* ===== Side Toolbar ===== */
+        .toolbar { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 999; }
+        .toolbar ul { list-style: none; }
+        .toolbar li { position: relative; }
+        .toolbar li > a, .toolbar li > span { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--blue); color: #fff; cursor: pointer; transition: 0.3s; }
+        .toolbar li > a:hover, .toolbar li:hover > span { background: var(--blue-dark); }
+        .toolbar .icon { font-size: 20px; }
+        .toolbar .wz { font-size: 12px; margin-top: 2px; }
+        .toolbar .phone .tel-phone { position: absolute; right: 50px; top: 0; background: var(--blue); color: #fff; padding: 10px 15px; font-size: 14px; white-space: nowrap; display: none; border-radius: 4px 0 0 4px; }
+        .toolbar .phone:hover .tel-phone { display: block; }
+        .toolbar .ewm .ewm-box { position: absolute; right: 50px; top: 0; background: #fff; padding: 10px; border-radius: 4px; display: none; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+        .toolbar .ewm:hover .ewm-box { display: block; }
+        .toolbar .ewm .ewm-box img { width: 120px; height: 120px; }
+        .toolbar .backtop a { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--blue); color: #fff; }
+
+        /* ===== Mobile Footer ===== */
+        .mob-footer { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #eee; z-index: 999; }
+        .mob-footer ul { display: flex; }
+        .mob-footer li { flex: 1; }
+        .mob-footer li a { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 0; font-size: 12px; color: #666; }
+        .mob-footer li a .iconfont { font-size: 20px; margin-bottom: 2px; }
 
         /* ===== Responsive ===== */
-        @media (max-width: 1024px) {
-            .adv-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
         @media (max-width: 768px) {
-            .top-bar { font-size: 0.75rem; }
-            .top-bar-left { gap: 12px; }
-            .nav-links { display: none; }
-            .mobile-toggle { display: block; }
-            .nav-links.open {
-                display: flex; flex-direction: column; position: absolute;
-                top: 70px; left: 0; right: 0; background: #fff;
-                padding: 12px 20px; gap: 12px; border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow-lg);
-            }
-            .hero-banner { height: 400px; }
-            .hero-slide-content h2 { font-size: 1.6rem; }
-            .hero-tags { gap: 10px; flex-wrap: wrap; }
-            .hero-tag { padding: 8px 16px; font-size: 0.78rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-image { height: 200px; }
-            .scope-tabs { flex-wrap: wrap; }
-            .scope-tab { padding: 10px 20px; font-size: 0.85rem; }
-            .product-slide { min-width: calc(50% - 10px); }
-            .adv-grid { grid-template-columns: 1fr; }
-            .news-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
+            .top_head { display: none; }
+            .header .w1400 { flex-direction: column; align-items: center; }
+            .x-menu { flex-wrap: wrap; justify-content: center; }
+            .x-menu > li > a { padding: 8px 12px; font-size: 13px; }
+            .x-sub-menu { display: none !important; }
+            .banner-item img { min-height: 200px; }
+            .cc4 .w1400 { flex-direction: column; }
+            .c4img { flex: none; }
+            .c2 .w1400 { flex-direction: column; }
+            .c2b { flex: none; }
+            .pro_list li { flex: 0 0 calc(50% - 10px); }
+            .cc5 .w1400 { flex-direction: column; }
+            .cc5a { flex: none; }
+            .footer .w1400 { flex-direction: column; }
+            .footerb { flex: none; }
+            .mob-footer { display: block; }
+            .toolbar { display: none; }
+            .tab-li li a { font-size: 14px; padding: 8px 12px; }
         }
+
         @media (max-width: 480px) {
-            .hero-banner { height: 340px; }
-            .hero-slide-content h2 { font-size: 1.3rem; }
-            .product-slide { min-width: 100%; }
+            .pro_list li { flex: 0 0 100%; }
+            .cc5a { flex-direction: column; }
         }
 
         /* ===== Animations ===== */
-        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .wow { opacity: 0; transition: opacity 0.6s, transform 0.6s; }
+        .wow.visible { opacity: 1; transform: none; }
+        .fadeInUp { transform: translateY(30px); }
+        .fadeInLeft { transform: translateX(-30px); }
+        .fadeInRight { transform: translateX(30px); }
     </style>
 </head>
 <body>
 
-<!-- Top Utility Bar -->
-<div class="top-bar">
-    <div class="top-bar-inner">
-        <div class="top-bar-left">
-            <a href="tel:027-86465464" class="top-bar-item">&#128222; 咨询热线：027-86465464</a>
-            <a href="mailto:rain.xu@whshuofeng.cn" class="top-bar-item">&#128231; 企业邮箱：rain.xu@whshuofeng.cn</a>
-        </div>
-        <div class="top-bar-right">
-            <a href="#contact">在线留言</a>
-            <a href="#contact">联系我们</a>
+<!-- ===== Top Bar ===== -->
+<div class="top_head">
+    <div class="w1400 flex">
+        <div class="top_heada"></div>
+        <div class="top_headb flex">
+            <div class="topdh">
+                <img src="//cdn.myxypt.com/db68f539/23/03/a3ca3e176822afbfcd17d84fe2592cbf046d5ac7.png" alt="">
+                <h5><p>咨询热线：<span>027-86465464</span></p></h5>
+            </div>
+            <div class="toplink">
+                <a href="mailto:rain.xu@whshuofeng.cn">企业邮箱</a>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Header / Nav -->
-<header class="header" id="header">
-    <div class="header-inner">
-        <div class="logo">
-            <div class="logo-icon">朔</div>
-            <div class="logo-text">
-                朔丰电子科技
-                <small>SHUOFENG ELECTRONIC TECHNOLOGY</small>
+<!-- ===== Header ===== -->
+<div class="header">
+    <div class="w1400 flex">
+        <div class="logo flex">
+            <div class="logoimg"><a href="/"><img alt="" src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" /></a></div>
+            <div class="logowz">
+                <a href="/">
+                    <dd>武汉朔丰电子科技有限公司</dd>
+                    <dt>Wuhan Shuofeng Electronic Technology</dt>
+                </a>
             </div>
         </div>
-        <nav class="nav-links" id="navLinks">
-            <a href="#home" class="active">首页</a>
-            <a href="#about">关于我们</a>
-            <a href="#scope">业务范围</a>
-            <a href="#clients">服务客户</a>
-            <a href="#news">新闻中心</a>
-            <a href="#contact">在线留言</a>
-            <a href="#contact">联系我们</a>
-        </nav>
-        <div class="mobile-toggle" id="mobileToggle">&#9776;</div>
-    </div>
-</header>
-
-<!-- Hero Banner -->
-<section class="hero-banner" id="home">
-    <div class="hero-slides" id="heroSlides">
-        <div class="hero-slide">
-            <div class="hero-slide-bg"></div>
-            <div class="hero-slide-content">
-                <h2>武汉朔丰电子科技有限公司</h2>
-                <p>深耕电力设备、测量测试仪器、智能自动化与半导体领域<br>以技术创新赋能产业升级，为客户提供高品质产品与专业服务</p>
-                <a href="#scope" class="hero-btn">了解业务范围 &#8594;</a>
-            </div>
-        </div>
-        <div class="hero-slide">
-            <div class="hero-slide-bg"></div>
-            <div class="hero-slide-content">
-                <h2>专注电子科技 · 创新驱动未来</h2>
-                <p>电力设备、测量仪器、新能源技术、智能自动化设备、半导体产品<br>全方位的行业解决方案</p>
-                <div class="hero-tags">
-                    <div class="hero-tag">&#9733; 品质保障</div>
-                    <div class="hero-tag">&#9881; 技术专业</div>
-                    <div class="hero-tag">&#9825; 售后完善</div>
-                    <div class="hero-tag">&#9878; 诚信经营</div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide">
-            <div class="hero-slide-bg"></div>
-            <div class="hero-slide-content">
-                <h2>竭诚为您提供电子科技解决方案</h2>
-                <p>从技术研发到产品落地，从技术咨询到售后维护<br>全程专业陪伴，让客户放心选择</p>
-                <a href="#contact" class="hero-btn">立即咨询 &#128222;</a>
-            </div>
-        </div>
-    </div>
-    <div class="hero-nav" id="heroNav">
-        <div class="hero-dot active" data-index="0"></div>
-        <div class="hero-dot" data-index="1"></div>
-        <div class="hero-dot" data-index="2"></div>
-    </div>
-</section>
-
-<!-- About Us -->
-<section class="about-section" id="about">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">ABOUT US</div>
-            <div class="divider"></div>
-            <h2>关于我们</h2>
-        </div>
-        <div class="about-grid">
-            <div class="about-image">
-                <div style="position:relative;z-index:1;">
-                    <div style="font-size:2.8rem;font-weight:900;letter-spacing:6px;">朔丰</div>
-                    <div style="font-size:0.9rem;letter-spacing:2px;margin-top:8px;">SHUOFENG</div>
-                </div>
-            </div>
-            <div class="about-text">
-                <h3>武汉朔丰电子科技有限公司</h3>
-                <p>武汉朔丰电子科技有限公司成立于2019年10月，坐落于武汉市汉阳区，注册资本500万元人民币。公司专注于电子科技领域的技术研发、产品销售与技术服务，致力于为电力、工业自动化、新能源等行业提供全方位的产品解决方案。</p>
-                <p>公司业务涵盖电力设备与产品、测量测试仪器、电子设备与软件、新能源技术、智能设备与自动化设备、半导体产品等六大核心领域，始终坚持"技术创新、品质为本、客户至上"的经营理念，持续为客户创造价值。</p>
-                <a href="#scope" class="about-more">查看更多 &#8594;</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Business Scope -->
-<section class="scope-section" id="scope">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">BUSINESS SCOPE</div>
-            <div class="divider"></div>
-            <h2>业务范围</h2>
-            <p>覆盖六大核心领域，提供从开发到销售的全链条服务</p>
-        </div>
-        <div class="scope-tabs">
-            <div class="scope-tab active" data-tab="power">电力设备与测量仪器</div>
-            <div class="scope-tab" data-tab="smart">新能源与智能自动化</div>
-            <div class="scope-tab" data-tab="semi">半导体产品</div>
-        </div>
-
-        <!-- Tab: Power & Measurement -->
-        <div class="scope-panel active" id="panel-power">
-            <div class="scope-carousel-wrap">
-                <div class="scope-carousel" id="carousel-power">
-                    <div class="product-slide">
-                        <div class="product-slide-img power">&#9889;</div>
-                        <div class="product-slide-body">
-                            <h4>电力检测设备</h4>
-                            <p>高压试验设备、绝缘测试仪、继电保护测试装置</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img power">&#128268;</div>
-                        <div class="product-slide-body">
-                            <h4>电力监测系统</h4>
-                            <p>在线监测装置、电能质量分析仪、配电监控终端</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img measure">&#128300;</div>
-                        <div class="product-slide-body">
-                            <h4>测量仪器仪表</h4>
-                            <p>精密测量仪器、多功能测试仪表、校准设备</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img measure">&#128295;</div>
-                        <div class="product-slide-body">
-                            <h4>传感器及变送器</h4>
-                            <p>温度/压力/流量传感器、信号变送器、数据采集模块</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img power">&#127911;</div>
-                        <div class="product-slide-body">
-                            <h4>高压试验设备</h4>
-                            <p>工频耐压试验装置、冲击电压发生器、局部放电检测系统</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img measure">&#128202;</div>
-                        <div class="product-slide-body">
-                            <h4>继电保护装置</h4>
-                            <p>微机保护装置、线路保护、变压器保护、电动机保护</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="moveCarousel('power', -1)">&#8249;</button>
-                <button class="carousel-btn" onclick="moveCarousel('power', 1)">&#8250;</button>
-            </div>
-        </div>
-
-        <!-- Tab: New Energy & Smart Automation -->
-        <div class="scope-panel" id="panel-smart">
-            <div class="scope-carousel-wrap">
-                <div class="scope-carousel" id="carousel-smart">
-                    <div class="product-slide">
-                        <div class="product-slide-img new-energy">&#127793;</div>
-                        <div class="product-slide-body">
-                            <h4>新能源发电设备</h4>
-                            <p>光伏逆变器、风力发电控制设备、分布式发电系统</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img new-energy">&#128267;</div>
-                        <div class="product-slide-body">
-                            <h4>储能系统</h4>
-                            <p>电池储能系统、超级电容储能、微电网能量管理</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img smart">&#128187;</div>
-                        <div class="product-slide-body">
-                            <h4>智能监控系统</h4>
-                            <p>SCADA系统、远程监控平台、智能巡检机器人</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img auto">&#9881;</div>
-                        <div class="product-slide-body">
-                            <h4>自动化控制系统</h4>
-                            <p>PLC控制系统、DCS分布式控制、工业物联网方案</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img smart">&#128421;</div>
-                        <div class="product-slide-body">
-                            <h4>配电自动化</h4>
-                            <p>智能配电终端、馈线自动化、配电网自愈控制</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img auto">&#128274;</div>
-                        <div class="product-slide-body">
-                            <h4>工业物联网</h4>
-                            <p>工业网关、边缘计算设备、云平台数据服务</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="moveCarousel('smart', -1)">&#8249;</button>
-                <button class="carousel-btn" onclick="moveCarousel('smart', 1)">&#8250;</button>
-            </div>
-        </div>
-
-        <!-- Tab: Semiconductor -->
-        <div class="scope-panel" id="panel-semi">
-            <div class="scope-carousel-wrap">
-                <div class="scope-carousel" id="carousel-semi">
-                    <div class="product-slide">
-                        <div class="product-slide-img semi">&#128421;</div>
-                        <div class="product-slide-body">
-                            <h4>半导体器件</h4>
-                            <p>二极管、三极管、MOSFET、IGBT功率模块</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img ic">&#128190;</div>
-                        <div class="product-slide-body">
-                            <h4>集成电路</h4>
-                            <p>模拟IC、数字IC、混合信号芯片、电源管理IC</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img semi">&#9889;</div>
-                        <div class="product-slide-body">
-                            <h4>功率半导体</h4>
-                            <p>SiC功率器件、GaN器件、高压功率模块</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img semi">&#128300;</div>
-                        <div class="product-slide-body">
-                            <h4>半导体材料</h4>
-                            <p>硅晶圆、化合物半导体衬底、封装材料</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img sensor">&#128295;</div>
-                        <div class="product-slide-body">
-                            <h4>MEMS传感器</h4>
-                            <p>加速度传感器、压力MEMS、陀螺仪芯片</p>
-                        </div>
-                    </div>
-                    <div class="product-slide">
-                        <div class="product-slide-img sensor">&#128246;</div>
-                        <div class="product-slide-body">
-                            <h4>射频器件</h4>
-                            <p>RF滤波器、射频开关、低噪放大器LNA</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="moveCarousel('semi', -1)">&#8249;</button>
-                <button class="carousel-btn" onclick="moveCarousel('semi', 1)">&#8250;</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Advantages -->
-<section class="adv-section" id="advantages">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">OUR ADVANTAGES</div>
-            <div class="divider"></div>
-            <h2>选择朔丰的3大优势</h2>
-            <p>竭诚为您提供电子科技领域全方位解决方案</p>
-        </div>
-        <div class="adv-grid">
-            <div class="adv-card fade-in">
-                <div class="adv-icon">&#9733;</div>
-                <h4>企业实力</h4>
-                <p>成立于2019年，注册资本500万元，深耕电力设备、测量仪器、新能源、智能自动化、半导体等六大核心领域，致力于为客户提供有竞争力的产品与全方位高质量的技术与商务服务。</p>
-            </div>
-            <div class="adv-card fade-in">
-                <div class="adv-icon">&#9881;</div>
-                <h4>技术专业</h4>
-                <p>公司技术团队具备丰富的行业经验，在电力检测、自动化控制、半导体应用等领域积累深厚，具有系统集成和软件开发编程的能力，可针对个案提供定制化解决方案。</p>
-            </div>
-            <div class="adv-card fade-in">
-                <div class="adv-icon">&#9825;</div>
-                <h4>服务保障</h4>
-                <p>质保期内有质量问题包退换，免费上门保修，7×24小时快速响应机制，免费提供技术升级与咨询服务，定期回访客户，确保客户持续满意。</p>
-            </div>
-        </div>
-        <div class="adv-cta">
-            <div class="adv-cta-phone">咨询热线：<strong>027-86465464</strong></div>
-            <a href="#contact" class="adv-cta-btn">立即咨询 &#8594;</a>
-        </div>
-    </div>
-</section>
-
-<!-- Clients -->
-<section class="clients-section" id="clients">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">OUR CLIENTS</div>
-            <div class="divider"></div>
-            <h2>服务客户</h2>
-            <p>竭诚服务各类型客户，树立良好信誉</p>
-        </div>
-        <div class="clients-scroll-wrap">
-            <div class="clients-scroll">
-                <div class="client-logo">国家电网</div>
-                <div class="client-logo">南方电网</div>
-                <div class="client-logo">华能集团</div>
-                <div class="client-logo">大唐集团</div>
-                <div class="client-logo">中国中车</div>
-                <div class="client-logo">长江存储</div>
-                <div class="client-logo">武汉大学</div>
-                <div class="client-logo">华中科技</div>
-                <div class="client-logo">烽火通信</div>
-                <div class="client-logo">东风汽车</div>
-                <!-- Duplicate for seamless loop -->
-                <div class="client-logo">国家电网</div>
-                <div class="client-logo">南方电网</div>
-                <div class="client-logo">华能集团</div>
-                <div class="client-logo">大唐集团</div>
-                <div class="client-logo">中国中车</div>
-                <div class="client-logo">长江存储</div>
-                <div class="client-logo">武汉大学</div>
-                <div class="client-logo">华中科技</div>
-                <div class="client-logo">烽火通信</div>
-                <div class="client-logo">东风汽车</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- News -->
-<section class="news-section" id="news">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">NEWS CENTER</div>
-            <div class="divider"></div>
-            <h2>新闻资讯</h2>
-            <p>聚焦行业资讯，了解企业动态，解决技术疑难</p>
-        </div>
-        <div class="news-grid">
-            <div class="news-featured">
-                <div class="news-tag">行业资讯</div>
-                <h4>电力设备行业发展趋势：智能化与绿色化并行</h4>
-                <p>随着国家"双碳"战略深入推进，电力设备行业正加速向智能化、数字化、绿色化方向转型。新型电力系统建设对设备提出了更高要求...</p>
-                <div class="news-date">2026-07-10</div>
-            </div>
-            <div class="news-list">
-                <div class="news-item">
-                    <div class="news-item-date">
-                        <div class="day">15</div>
-                        <div class="month">2026-07</div>
-                    </div>
-                    <div class="news-item-body">
-                        <h5>测量测试仪器市场持续增长，国产替代加速推进</h5>
-                        <p>国内测量仪器企业技术实力不断增强，在中低端市场已实现较大突破...</p>
-                        <a href="#" class="news-item-link">阅读更多 &#8594;</a>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-item-date">
-                        <div class="day">08</div>
-                        <div class="month">2026-07</div>
-                    </div>
-                    <div class="news-item-body">
-                        <h5>半导体国产化之路：机遇与挑战并存</h5>
-                        <p>国产半导体产业链逐步完善，但在高端领域仍面临技术瓶颈...</p>
-                        <a href="#" class="news-item-link">阅读更多 &#8594;</a>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-item-date">
-                        <div class="day">01</div>
-                        <div class="month">2026-06</div>
-                    </div>
-                    <div class="news-item-body">
-                        <h5>新能源储能技术突破：固态电池迎来新进展</h5>
-                        <p>多家企业宣布固态电池研发取得重大进展，预计未来3年内可实现量产...</p>
-                        <a href="#" class="news-item-link">阅读更多 &#8594;</a>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-item-date">
-                        <div class="day">20</div>
-                        <div class="month">2026-05</div>
-                    </div>
-                    <div class="news-item-body">
-                        <h5>工业自动化升级：智能制造赋能传统产业</h5>
-                        <p>工业互联网与AI技术深度融合，推动制造业数字化转型加速...</p>
-                        <a href="#" class="news-item-link">阅读更多 &#8594;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section class="contact-section" id="contact">
-    <div class="container">
-        <div class="section-header">
-            <div class="en-title">CONTACT US</div>
-            <div class="divider"></div>
-            <h2>联系我们</h2>
-            <p>期待与您合作，共创共赢</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>联系方式</h3>
-                <div class="contact-info-item">
-                    <div class="contact-info-icon">&#128205;</div>
-                    <div>
-                        <h4>公司地址</h4>
-                        <p>武汉市汉阳区汉阳人信汇B地块9、10、11幢9号楼11层8号-7</p>
-                    </div>
-                </div>
-                <div class="contact-info-item">
-                    <div class="contact-info-icon">&#128222;</div>
-                    <div>
-                        <h4>联系电话</h4>
-                        <p>027-86465464</p>
-                    </div>
-                </div>
-                <div class="contact-info-item">
-                    <div class="contact-info-icon">&#128231;</div>
-                    <div>
-                        <h4>电子邮箱</h4>
-                        <p>rain.xu@whshuofeng.cn</p>
-                    </div>
-                </div>
-                <div class="contact-info-item">
-                    <div class="contact-info-icon">&#127760;</div>
-                    <div>
-                        <h4>官方网站</h4>
-                        <p>www.whshuofeng.cn</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form-wrap">
-                <h3>在线留言</h3>
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>您的姓名</label>
-                            <input type="text" placeholder="请输入姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <label>联系电话</label>
-                            <input type="tel" placeholder="请输入电话号码" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>咨询领域</label>
-                        <select>
-                            <option>电力设备与测量仪器</option>
-                            <option>新能源与智能自动化</option>
-                            <option>半导体产品</option>
-                            <option>技术咨询</option>
-                            <option>其他</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>留言内容</label>
-                        <textarea placeholder="请描述您的需求或问题..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">提交留言</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-icon">朔</div>
-                    <div class="logo-text">朔丰电子科技</div>
-                </div>
-                <p>武汉朔丰电子科技有限公司 — 专注电子科技领域，以技术创新赋能产业升级，竭诚为客户提供全方位高质量的产品与技术服务。</p>
-            </div>
-            <div>
-                <h4>网站导航</h4>
-                <div class="footer-links">
-                    <a href="#home">首页</a>
+        <div class="nnav">
+            <ul class="x-menu clearfix">
+                <li><a href="/">首页</a></li>
+                <li>
                     <a href="#about">关于我们</a>
-                    <a href="#scope">业务范围</a>
-                    <a href="#clients">服务客户</a>
-                    <a href="#news">新闻中心</a>
-                    <a href="#contact">联系我们</a>
-                </div>
-            </div>
-            <div>
-                <h4>业务领域</h4>
-                <div class="footer-links">
-                    <a href="#scope">电力设备</a>
-                    <a href="#scope">测量仪器</a>
-                    <a href="#scope">新能源技术</a>
-                    <a href="#scope">智能自动化</a>
-                    <a href="#scope">半导体产品</a>
-                </div>
-            </div>
-            <div>
-                <h4>联系方式</h4>
-                <div class="footer-links">
-                    <a href="tel:027-86465464">027-86465464</a>
-                    <a href="mailto:rain.xu@whshuofeng.cn">rain.xu@whshuofeng.cn</a>
-                    <a href="#">武汉市汉阳区</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2019-2026 武汉朔丰电子科技有限公司 All Rights Reserved</span>
-            <span><a href="#">鄂ICP备XXXXXXXX号</a> | <a href="#">技术支持：捷瑞科技</a></span>
+                    <ul class="x-sub-menu">
+                        <li><a href="#about">公司简介</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#business">业务范围</a>
+                    <ul class="x-sub-menu">
+                        <li><a href="#business">汽车电子</a></li>
+                        <li><a href="#business">工业控制及自动化</a></li>
+                    </ul>
+                </li>
+                <li><a href="#clients">服务客户</a></li>
+                <li><a href="#news">新闻中心</a></li>
+                <li><a href="#contact">在线留言</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
         </div>
     </div>
-</footer>
+</div>
+
+<!-- ===== Banner ===== -->
+<div class="x-banner">
+    <div class="banner-carousel" id="bannerCarousel">
+        <div class="banner-track">
+            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/06/05ba262cd7e4cdcf5f016b5afd9e55e1fe13f200.jpg" alt=""></div>
+            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/8cd5ab12f0bf203896e4675df4c870d091df0842.jpg" alt=""></div>
+            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/5da2bde998bedcc00fd4caa469b3a289dd7804ab.jpg" alt=""></div>
+        </div>
+        <div class="banner-dots" id="bannerDots">
+            <div class="banner-dot active" data-index="0"></div>
+            <div class="banner-dot" data-index="1"></div>
+            <div class="banner-dot" data-index="2"></div>
+        </div>
+        <div class="banner-arrows">
+            <div class="banner-arrow" id="bannerPrev">&#10094;</div>
+            <div class="banner-arrow" id="bannerNext">&#10095;</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== About Us ===== -->
+<div class="c1" id="about">
+    <div class="w1400">
+        <div class="ccb wow fadeInUp"><h3>关于我们</h3></div>
+        <div class="cc4 wow fadeInUp">
+            <div class="w1400 clearfix">
+                <div class="c4img">
+                    <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
+                </div>
+                <div class="c4ab">
+                    <h3>武汉朔丰电子科技有限公司</h3>
+                    <h4>专注于汽车电子应用市场解决方案</h4>
+                    <div class="abwz">
+                        <p style="line-height: 2em;">&nbsp;武汉朔丰电子科技有限公司是一家专注于汽车电子应用市场解决方案的公司，致力于为客户提供有竞争力的产品及全方位高质量的技术与商务服务。</p>
+                        <p style="line-height: 2em;">&nbsp;未来朔丰将坚持深耕产品应用技术，专注于在汽车车身控制、电机控制器、BMS控制器、ADAS等汽车核心领域的应用研发和市场布局。</p>
+                    </div>
+                    <a href="#about" class="c4mor">查看更多</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Business Scope ===== -->
+        <div class="ccb wow fadeInUp" id="business">
+            <h3>业务范围</h3>
+            <div class="promenu2">
+                <ul class="tab-li flex">
+                    <li class="active"><a href="#business">汽车电子</a></li>
+                    <li><a href="#business">工业控制及自动化</a></li>
+                </ul>
+            </div>
+            <div class="tab-con">
+                <!-- Tab 1: 汽车电子 -->
+                <div class="tab-main active">
+                    <ul class="pro_list">
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/2e7933e31d581fbb92b80673eade81a77e0cb85b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的摩托车PKG方案"></a>
+                            <h2><a>可量产的摩托车PKG方案</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/159756744f5dcb6fe40d8782a1bd550a9fb2e566.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的PEPS方案"></a>
+                            <h2><a>可量产的PEPS方案</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/371323e9830fd0d411c84ec0f6ca6d96478c8c29.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的氛围灯方案"></a>
+                            <h2><a>可量产的氛围灯方案</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/8c2f361969afd39fcbdff41ea82e67b131a40ad5.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的数字钥匙NFC方案"></a>
+                            <h2><a>可量产的数字钥匙NFC方案</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bf79deba7427de8b8c2affc94c4dfb0be531791b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="汽车LED灯光驱动方案"></a>
+                            <h2><a>汽车LED灯光驱动方案</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/c2485697cf65792d0722a950441f6be1d7d9602b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无刷电机FOC驱动方案"></a>
+                            <h2><a>无刷电机FOC驱动方案</a></h2>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tab 2: 工业控制及自动化 -->
+                <div class="tab-main">
+                    <ul class="pro_list">
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/7207953e7b1d62e2ebc110581b3d031db6bb0839.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="电力线载波PLC智能网关"></a>
+                            <h2><a>电力线载波PLC智能网关</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/f23ea3af368a79ad63f4f542f938845e2ccab729.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无线数据接口显示屏"></a>
+                            <h2><a>无线数据接口显示屏</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/728d89d4f6a26252a15a7b47fc92d0c5d5dcfe69.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="智能无线测温系统"></a>
+                            <h2><a>智能无线测温系统</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/32f0702a67ddda04d58415953ff93fcff8d49115.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="5G工业路由器"></a>
+                            <h2><a>5G工业路由器</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/e03feea9b019e93f5ed2f6f60b791126c2d56ca6.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
+                            <h2><a>工业电控</a></h2>
+                        </li>
+                        <li>
+                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/9cdda06bddc1eef2b7b278e102eaf51cb5cb54fa.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
+                            <h2><a>工业电控</a></h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 3 Advantages ===== -->
+<div class="c2">
+    <div class="w1400 flex wow fadeInUp">
+        <div class="c2a">
+            <div class="c2abt">
+                <dd>选择我们的<span>3</span>大优势</dd>
+                <dt>竭诚为您提供汽车电子应用市场解决方案</dt>
+            </div>
+            <div class="c2ays">
+                <li class="flex">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="企业实力"></div>
+                    <div class="liwz">
+                        <h3>企业实力</h3>
+                        <p>致力于为客户提供有竞争力的产品及全方位高质量的技术与商务服务。</p>
+                    </div>
+                </li>
+                <li class="flex">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="研发团队"></div>
+                    <div class="liwz">
+                        <h3>研发团队</h3>
+                        <p>公司研发团队来自Global及本土Top Tier1资深研发工程师，具备完整的汽车电子开发和量产的经验。</p>
+                    </div>
+                </li>
+                <li class="flex">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="服务保障"></div>
+                    <div class="liwz">
+                        <h3>服务保障</h3>
+                        <p>一年质保，有质量问题包退换，免费上门保修，724小时快速响应机制，免费提供技术升级、咨询服务，定期回访客户。</p>
+                    </div>
+                </li>
+            </div>
+            <div class="c2dh flex">
+                <div class="c2dha">
+                    <img src="//cdn.myxypt.com/db68f539/23/03/0fad70ab028b0593cd85d0fa22a1bef0cedd7526.png" alt=""> 咨询热线：<span>027-86465464</span>
+                </div>
+                <a href="#contact" class="c2dhb">立即咨询</a>
+            </div>
+        </div>
+        <div class="c2b">
+            <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- ===== Service Clients ===== -->
+<div class="cc3 wow fadeInUp" id="clients">
+    <div class="c3bt"><dd>服务客户</dd></div>
+    <div class="w1500">
+        <div class="case-scroll">
+            <ul class="case-track" id="clientTrack">
+                <!-- First set -->
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
+                <!-- Duplicate set for seamless scroll -->
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
+                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== News ===== -->
+<div class="cc5" id="news">
+    <div class="c5bt wow fadeInUp">
+        <dd>新闻资讯</dd>
+        <dt>聚焦行业资讯，了解企业动态，解决技术疑难</dt>
+    </div>
+    <div class="w1400 flex">
+        <div class="cc5a flex wow fadeInLeft">
+            <li>
+                <a>
+                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bebae374ea3a0cac304adf7e1bd40e8756185eef.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="如何实现汽车电子定制化方案的精准定位？"></div>
+                    <h3>如何实现汽车电子定制化方案的精准定位？</h3>
+                    <p>随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足...</p>
+                    <div class="lirq clearfix">
+                        <dd>2023-05-01</dd>
+                        <dt>阅读更多 &nbsp;&nbsp; →</dt>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/118af3ad5d79124d3e71b0f518cae3cdc0083d76.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="汽车电子定制化方案，是未来的发展趋势吗？"></div>
+                    <h3>汽车电子定制化方案，是未来的发展趋势吗？</h3>
+                    <p>汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探...</p>
+                    <div class="lirq clearfix">
+                        <dd>2023-05-01</dd>
+                        <dt>阅读更多 &nbsp;&nbsp; →</dt>
+                    </div>
+                </a>
+            </li>
+        </div>
+        <div class="cc5b wow fadeInRight">
+            <ul class="xx-news">
+                <li>
+                    <a>
+                        <h3>汽车电子技术对汽车行业的影响有哪些？</h3>
+                        <p>2024-04-01 </p>
+                        <span><h5>汽车电子技术的发展，深刻地影响着整个汽车行业。它在...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>未来汽车电子领域的创新点在哪里？</h3>
+                        <p>2024-04-01 </p>
+                        <span><h5>未来汽车电子领域的创新点有很多，其中主要包括以下几...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>汽车电子和无人驾驶技术之间有何关联？</h3>
+                        <p>2024-03-20 </p>
+                        <span><h5>汽车电子和无人驾驶技术之间有着密不可分的关联。汽...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>未来十年的汽车电子行业会如何发展？</h3>
+                        <p>2024-03-20 </p>
+                        <span><h5>汽车电子行业是汽车行业中不可或缺的一部分，随着科...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>汽车电子定制方案个性化驾驶体验的未来之路</h3>
+                        <p>2024-01-26 </p>
+                        <span><h5>汽车电子定制方案是指根据用户个人需求，提供个性化...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>汽车电子定制方案是什么？如何实现？</h3>
+                        <p>2024-01-26 </p>
+                        <span><h5>汽车电子定制方案是根据不同汽车品牌和车型的需要，...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>汽车电子定制方案：如何全面提升驾驶体验？</h3>
+                        <p>2023-12-05 </p>
+                        <span><h5>在汽车电子领域，提升驾驶体验是一个重要的研发方向...</h5></span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <h3>如何选择适合自己的汽车电子定制方案？</h3>
+                        <p>2023-12-05 </p>
+                        <span><h5>汽车电子定制方案在汽车行业的发展中扮演着重要的角...</h5></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer" id="contact">
+    <div class="w1400 flex">
+        <div class="footera">
+            <div class="ftwz">武汉朔丰电子科技有限公司</div>
+            <div class="dblx">
+                <p><img src="//cdn.myxypt.com/db68f539/23/03/05a2ef1213e4256a4d8eb7afb83b80c5b4fa3405.png"/>电话：027-86465464</p>
+                <p><img src="//cdn.myxypt.com/db68f539/23/05/25720ac87b9fbbb8260812ecf52715122c60747c.png"/>邮箱：rain.xu@whshuofeng.cn</p>
+                <p><img src="//cdn.myxypt.com/db68f539/23/03/ddafda64772f54709988ab4cb95d4829aab9d508.png"/>地址：武汉市汉阳区汉阳人信汇B地块9、10、11幢9号楼11层8号-7</p>
+            </div>
+        </div>
+        <div class="footerb flex">
+            <div class="fot">
+                <dd>关于我们</dd>
+                <dt><a href="#about">公司简介</a></dt>
+            </div>
+            <div class="fot">
+                <dd>产品中心</dd>
+                <dt><a href="#business">汽车电子</a></dt>
+                <dt><a href="#business">工业控制及自动化</a></dt>
+            </div>
+            <div class="fot">
+                <dd>工程案例</dd>
+                <dt><a href="#clients">服务客户</a></dt>
+            </div>
+            <div class="fot">
+                <dd>新闻中心</dd>
+                <dt><a href="#news">公司新闻</a></dt>
+                <dt><a href="#news">行业资讯</a></dt>
+                <dt><a href="#news">技术资讯</a></dt>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Copyright ===== -->
+<div class="foot">
+    <div class="w1400">
+        Copyright © 武汉朔丰电子科技有限公司 All rights reserved 备案号：<a href="http://beian.miit.gov.cn/" target="_blank">ICP备XXXXXXXX号</a>
+        <div class="jszc">
+            技术支持：<a href="#">捷瑞科技</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Mobile Footer ===== -->
+<div class="mob-footer">
+    <ul>
+        <li><a href="/">⌂ <span>首页</span></a></li>
+        <li><a href="tel:027-86465464">📞 <span>电话</span></a></li>
+        <li><a href="#contact">✉ <span>联系</span></a></li>
+    </ul>
+</div>
+
+<!-- ===== Side Toolbar ===== -->
+<div class="toolbar">
+    <ul>
+        <li class="phone" style="background: var(--blue)">
+            <span><span class="icon">📞</span><span class="wz">热线</span></span>
+            <div class="tel-phone" style="background: var(--blue)">027-86465464</div>
+        </li>
+        <li><a href="#contact" style="background: var(--blue)"><span class="icon">✉</span><span class="wz">留言</span></a></li>
+        <li class="backtop"><a href="#" id="backToTop" style="background: var(--blue)"><span class="icon">↑</span><span class="wz">TOP</span></a></li>
+    </ul>
+</div>
 
 <script>
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    // ===== Banner Carousel =====
+    (function() {
+        const track = document.querySelector('.banner-track');
+        const dots = document.querySelectorAll('.banner-dot');
+        const prevBtn = document.getElementById('bannerPrev');
+        const nextBtn = document.getElementById('bannerNext');
+        let current = 0;
+        const total = dots.length;
 
-    // Mobile menu
-    const toggle = document.getElementById('mobileToggle');
-    const nav = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => nav.classList.remove('open'));
-    });
+        function goTo(index) {
+            current = (index + total) % total;
+            track.style.transform = 'translateX(-' + current * 100 + '%)';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
 
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY + 120;
-        sections.forEach(sec => {
-            const top = sec.offsetTop;
-            const height = sec.offsetHeight;
-            const id = sec.getAttribute('id');
-            const link = nav.querySelector(`a[href="#${id}"]`);
-            if (link) {
-                link.classList.toggle('active', scrollY >= top && scrollY < top + height);
-            }
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+        dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
+
+        let autoPlay = setInterval(() => goTo(current + 1), 4000);
+        document.querySelector('.banner-carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
+        document.querySelector('.banner-carousel').addEventListener('mouseleave', () => { autoPlay = setInterval(() => goTo(current + 1), 4000); });
+    })();
+
+    // ===== Tab Switching =====
+    (function() {
+        const tabs = document.querySelectorAll('.tab-li li');
+        const panels = document.querySelectorAll('.tab-main');
+        tabs.forEach(tab => {
+            tab.addEventListener('mouseenter', function() {
+                const idx = this.index !== undefined ? this.index : Array.from(tabs).indexOf(this);
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                panels[idx].classList.add('active');
+            });
         });
-    });
+    })();
 
-    // Hero banner carousel
-    let heroIndex = 0;
-    const heroSlides = document.getElementById('heroSlides');
-    const heroDots = document.querySelectorAll('.hero-dot');
-    const totalSlides = heroSlides.children.length;
+    // ===== WOW Animation =====
+    (function() {
+        const wowElements = document.querySelectorAll('.wow');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        wowElements.forEach(el => observer.observe(el));
+    })();
 
-    function showHeroSlide(index) {
-        heroIndex = (index + totalSlides) % totalSlides;
-        heroSlides.style.transform = `translateX(-${heroIndex * 100}%)`;
-        heroDots.forEach((dot, i) => dot.classList.toggle('active', i === heroIndex));
-    }
-
-    heroDots.forEach(dot => {
-        dot.addEventListener('click', () => showHeroSlide(parseInt(dot.dataset.index)));
-    });
-
-    setInterval(() => showHeroSlide(heroIndex + 1), 5000);
-
-    // Business scope tabs
-    const tabs = document.querySelectorAll('.scope-tab');
-    const panels = document.querySelectorAll('.scope-panel');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.dataset.tab;
-            tabs.forEach(t => t.classList.toggle('active', t === tab));
-            panels.forEach(p => p.classList.toggle('active', p.id === `panel-${target}`));
-            // Reset carousel position
-            carouselPositions[target] = 0;
-            document.getElementById(`carousel-${target}`).style.transform = 'translateX(0)';
-        });
-    });
-
-    // Product carousel controls
-    const carouselPositions = { power: 0, smart: 0, semi: 0 };
-
-    function moveCarousel(name, direction) {
-        const carousel = document.getElementById(`carousel-${name}`);
-        const items = carousel.children;
-        const itemWidth = items[0].offsetWidth + 20; // width + gap
-        const visibleItems = window.innerWidth > 768 ? 3 : (window.innerWidth > 480 ? 2 : 1);
-        const maxPosition = items.length - visibleItems;
-
-        carouselPositions[name] += direction;
-        if (carouselPositions[name] < 0) carouselPositions[name] = 0;
-        if (carouselPositions[name] > maxPosition) carouselPositions[name] = maxPosition;
-
-        carousel.style.transform = `translateX(-${carouselPositions[name] * itemWidth}px)`;
-    }
-
-    // Fade-in animation
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Contact form
-    function handleSubmit(e) {
+    // ===== Back to Top =====
+    document.getElementById('backToTop').addEventListener('click', function(e) {
         e.preventDefault();
-        alert('感谢您的留言！我们会尽快与您联系。');
-        e.target.reset();
-    }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Smooth scroll for anchors =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 </script>
 
 </body>
