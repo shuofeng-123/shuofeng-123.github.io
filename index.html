@@ -40,7 +40,7 @@
         .top_heada { flex: 1; }
         .top_headb { display: flex; align-items: center; gap: 20px; }
         .topdh { display: flex; align-items: center; gap: 8px; }
-        .topdh img { width: 28px; height: 28px; }
+        .topdh-icon { width: 28px; height: 28px; }
         .topdh h5 { font-size: 14px; font-weight: normal; }
         .topdh h5 span { font-weight: bold; color: #fff; font-size: 16px; }
         .toplink a { color: rgba(255,255,255,0.85); margin-right: 10px; font-size: 13px; }
@@ -69,13 +69,16 @@
         .x-banner { overflow: hidden; position: relative; }
         .banner-carousel { position: relative; overflow: hidden; }
         .banner-track { display: flex; transition: transform 0.6s ease; }
-        .banner-item { flex: 0 0 100%; }
-        .banner-item img { width: 100%; height: auto; min-height: 400px; object-fit: cover; }
+        .banner-item { flex: 0 0 100%; position: relative; }
+        .banner-item { min-height: 400px; display: flex; align-items: center; justify-content: center; }
+        .banner-text { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; z-index: 5; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .banner-text h2 { font-size: 42px; margin-bottom: 15px; letter-spacing: 4px; }
+        .banner-text p { font-size: 20px; letter-spacing: 2px; }
         .banner-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
         .banner-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: 0.3s; }
         .banner-dot.active { background: #fff; transform: scale(1.2); }
-        .banner-arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 10; }
-        .banner-arrow { width: 40px; height: 60px; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; transition: 0.3s; }
+        .banner-arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 10; pointer-events: none; }
+        .banner-arrow { width: 40px; height: 60px; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; transition: 0.3s; pointer-events: auto; }
         .banner-arrow:hover { background: rgba(0,0,0,0.6); }
 
         /* ===== Section Title ===== */
@@ -86,8 +89,8 @@
         /* ===== About Section ===== */
         .cc4 { padding: 40px 0 60px; background: var(--blue-bg); }
         .cc4 .w1400 { display: flex; gap: 40px; align-items: stretch; }
-        .c4img { flex: 0 0 45%; overflow: hidden; }
-        .c4img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+        .c4img { flex: 0 0 45%; overflow: hidden; border-radius: 8px; }
+        .c4img .about-placeholder { width: 100%; height: 100%; min-height: 320px; background: linear-gradient(135deg, #2c5f9e 0%, #5a9bd5 50%, #337ab7 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 60px; letter-spacing: 8px; }
         .c4ab { flex: 1; }
         .c4ab h3 { font-size: 22px; color: var(--blue-dark); margin-bottom: 10px; }
         .c4ab h4 { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
@@ -109,9 +112,10 @@
         .pro_list { display: flex; gap: 20px; flex-wrap: wrap; }
         .pro_list li { flex: 0 0 calc(33.33% - 14px); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: 0.3s; }
         .pro_list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
-        .pro_list li .com-img { display: block; overflow: hidden; }
+        .pro_list li .com-img { display: block; overflow: hidden; height: 200px; }
         .pro_list li .com-img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .pro_list li:hover .com-img img { transform: scale(1.05); }
+        .pro_list li .prod-placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; letter-spacing: 2px; transition: 0.3s; }
+        .pro_list li:hover .prod-placeholder { transform: scale(1.05); }
         .pro_list li h2 { padding: 12px 10px; font-size: 15px; text-align: center; }
         .pro_list li h2 a { color: #333; transition: 0.3s; }
         .pro_list li h2 a:hover { color: var(--blue); }
@@ -125,17 +129,18 @@
         .c2abt dt { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
         .c2ays li { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
         .c2ays li .img { flex: 0 0 50px; }
-        .c2ays li .img img { width: 50px; height: 50px; }
+        .c2ays li .img svg { width: 50px; height: 50px; }
         .c2ays li .liwz h3 { font-size: 18px; margin-bottom: 5px; }
         .c2ays li .liwz p { font-size: 13px; color: rgba(255,255,255,0.8); }
         .c2dh { display: flex; align-items: center; gap: 15px; margin-top: 30px; }
         .c2dha { display: flex; align-items: center; gap: 5px; font-size: 16px; }
-        .c2dha img { width: 22px; height: 22px; }
+        .c2dha svg { width: 22px; height: 22px; }
         .c2dha span { color: var(--orange); font-size: 22px; font-weight: bold; }
         .c2dhb { display: inline-block; padding: 10px 25px; background: var(--orange); color: #fff; font-size: 15px; border-radius: 4px; transition: 0.3s; }
         .c2dhb:hover { background: #e55e00; }
-        .c2b { flex: 0 0 40%; }
-        .c2b img { width: 100%; border-radius: 8px; }
+        .c2b { flex: 0 0 40%; border-radius: 8px; overflow: hidden; }
+        .c2b .adv-placeholder { width: 100%; min-height: 380px; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); display: flex; align-items: center; justify-content: center; }
+        .c2b .adv-placeholder svg { width: 180px; height: 180px; opacity: 0.3; }
 
         /* ===== Service Clients ===== */
         .cc3 { padding: 50px 0; background: #f8f8f8; }
@@ -145,13 +150,13 @@
         .client-slider-inner { display: flex; transition: transform 0.5s ease; }
         .client-card { flex: 0 0 calc((100% - 100px) / 6); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; margin: 0 10px; transition: all 0.3s; }
         .client-card:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(44,95,158,0.15); }
-        .client-card .img { height: 130px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; padding: 10px; }
-        .client-card .img img { max-width: 90%; max-height: 110px; object-fit: contain; }
+        .client-card .img { height: 130px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; }
+        .client-card .img svg { width: 80px; height: 80px; }
+        .client-card .img .client-logo-text { font-size: 32px; font-weight: bold; color: var(--blue-dark); letter-spacing: 4px; }
         .client-card h3 { text-align: center; padding: 10px 8px; font-size: 14px; color: #333; border-top: 1px solid #eee; background: #fff; }
         .client-nav { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
         .client-nav-btn { width: 36px; height: 36px; background: var(--blue-dark); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; font-size: 16px; transition: 0.3s; border: none; }
         .client-nav-btn:hover { background: var(--blue); }
-        .c3mor { display: block; text-align: center; padding: 15px 0; margin-top: 15px; color: var(--blue); font-size: 14px; }
 
         /* ===== News ===== */
         .cc5 { padding: 50px 0; }
@@ -163,9 +168,10 @@
         .cc5a li { flex: 1; }
         .cc5a li a { display: block; background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; }
         .cc5a li a:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .cc5a li .img { overflow: hidden; }
+        .cc5a li .img { overflow: hidden; height: 200px; }
         .cc5a li .img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .cc5a li a:hover .img img { transform: scale(1.05); }
+        .cc5a li .img .news-placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; letter-spacing: 2px; transition: 0.3s; }
+        .cc5a li a:hover .news-placeholder { transform: scale(1.05); }
         .cc5a li h3 { padding: 12px 15px 5px; font-size: 16px; color: #333; }
         .cc5a li p { padding: 0 15px; font-size: 13px; color: var(--gray); line-height: 1.5; }
         .cc5a li .lirq { display: flex; justify-content: space-between; padding: 10px 15px; font-size: 12px; color: var(--light-gray); }
@@ -183,7 +189,7 @@
         .footera { flex: 1; }
         .ftwz { font-size: 20px; font-weight: bold; margin-bottom: 15px; }
         .dblx p { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 14px; }
-        .dblx p img { width: 18px; height: 18px; }
+        .dblx p svg { width: 18px; height: 18px; flex-shrink: 0; }
         .dbfx { margin-top: 15px; }
         .footerb { flex: 0 0 45%; display: flex; gap: 20px; }
         .fot { flex: 1; }
@@ -200,7 +206,7 @@
 
         /* ===== Side Toolbar ===== */
         .toolbar { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 999; }
-        .toolbar ul { list-style: none; }
+        .toolbar ul { list-style: none; padding: 0; margin: 0; }
         .toolbar li { position: relative; }
         .toolbar li > a, .toolbar li > span { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--blue); color: #fff; cursor: pointer; transition: 0.3s; }
         .toolbar li > a:hover, .toolbar li:hover > span { background: var(--blue-dark); }
@@ -218,7 +224,6 @@
         .mob-footer ul { display: flex; }
         .mob-footer li { flex: 1; }
         .mob-footer li a { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 0; font-size: 12px; color: #666; }
-        .mob-footer li a .iconfont { font-size: 20px; margin-bottom: 2px; }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
@@ -227,7 +232,9 @@
             .x-menu { flex-wrap: wrap; justify-content: center; }
             .x-menu > li > a { padding: 8px 12px; font-size: 13px; }
             .x-sub-menu { display: none !important; }
-            .banner-item img { min-height: 200px; }
+            .banner-item { min-height: 200px; }
+            .banner-text h2 { font-size: 24px; }
+            .banner-text p { font-size: 14px; }
             .cc4 .w1400 { flex-direction: column; }
             .c4img { flex: none; }
             .c2 .w1400 { flex-direction: column; }
@@ -263,7 +270,7 @@
         <div class="top_heada"></div>
         <div class="top_headb flex">
             <div class="topdh">
-                <img src="//cdn.myxypt.com/db68f539/23/03/a3ca3e176822afbfcd17d84fe2592cbf046d5ac7.png" alt="">
+                <svg class="topdh-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <h5><p>咨询热线：<span>027-86465464</span></p></h5>
             </div>
             <div class="toplink">
@@ -314,9 +321,15 @@
 <div class="x-banner">
     <div class="banner-carousel" id="bannerCarousel">
         <div class="banner-track">
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/06/05ba262cd7e4cdcf5f016b5afd9e55e1fe13f200.jpg" alt=""></div>
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/8cd5ab12f0bf203896e4675df4c870d091df0842.jpg" alt=""></div>
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/5da2bde998bedcc00fd4caa469b3a289dd7804ab.jpg" alt=""></div>
+            <div class="banner-item" style="background:linear-gradient(135deg,#1a3d6d 0%,#2c5f9e 40%,#5a9bd5 100%);">
+                <div class="banner-text"><h2>武汉朔丰电子科技有限公司</h2><p>专注于汽车电子应用市场解决方案</p></div>
+            </div>
+            <div class="banner-item" style="background:linear-gradient(135deg,#337ab7 0%,#ff6600 50%,#5a9bd5 100%);">
+                <div class="banner-text"><h2>汽车电子 · 工业控制</h2><p>致力于为客户提供有竞争力的产品及全方位高质量服务</p></div>
+            </div>
+            <div class="banner-item" style="background:linear-gradient(135deg,#2c5f9e 0%,#1a3d6d 50%,#337ab7 100%);">
+                <div class="banner-text"><h2>深耕产品应用技术</h2><p>车身控制 · 电机控制器 · BMS · ADAS</p></div>
+            </div>
         </div>
         <div class="banner-dots" id="bannerDots">
             <div class="banner-dot active" data-index="0"></div>
@@ -337,7 +350,16 @@
         <div class="cc4 wow fadeInUp">
             <div class="w1400 clearfix">
                 <div class="c4img">
-                    <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
+                    <div class="about-placeholder">
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:120px;opacity:0.4;">
+                            <rect x="40" y="60" width="120" height="80" rx="8" stroke="#fff" stroke-width="2"/>
+                            <circle cx="80" cy="95" r="15" stroke="#fff" stroke-width="2"/>
+                            <path d="M110 80 L140 110" stroke="#fff" stroke-width="2"/>
+                            <path d="M110 110 L140 80" stroke="#fff" stroke-width="2"/>
+                            <rect x="60" y="40" width="80" height="20" rx="4" stroke="#fff" stroke-width="2"/>
+                            <circle cx="100" cy="50" r="5" fill="#fff" opacity="0.5"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="c4ab">
                     <h3>武汉朔丰电子科技有限公司</h3>
@@ -365,27 +387,27 @@
                 <div class="tab-main active">
                     <ul class="pro_list">
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/2e7933e31d581fbb92b80673eade81a77e0cb85b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的摩托车PKG方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#5a9bd5);">摩托车PKG</div></a>
                             <h2><a>可量产的摩托车PKG方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/159756744f5dcb6fe40d8782a1bd550a9fb2e566.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的PEPS方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#5a9bd5);">PEPS</div></a>
                             <h2><a>可量产的PEPS方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/371323e9830fd0d411c84ec0f6ca6d96478c8c29.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的氛围灯方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#337ab7);">氛围灯</div></a>
                             <h2><a>可量产的氛围灯方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/8c2f361969afd39fcbdff41ea82e67b131a40ad5.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的数字钥匙NFC方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#ff6600);">数字钥匙NFC</div></a>
                             <h2><a>可量产的数字钥匙NFC方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bf79deba7427de8b8c2affc94c4dfb0be531791b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="汽车LED灯光驱动方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#2c5f9e);">LED灯光驱动</div></a>
                             <h2><a>汽车LED灯光驱动方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/c2485697cf65792d0722a950441f6be1d7d9602b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无刷电机FOC驱动方案"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#5a9bd5);">FOC电机驱动</div></a>
                             <h2><a>无刷电机FOC驱动方案</a></h2>
                         </li>
                     </ul>
@@ -394,27 +416,27 @@
                 <div class="tab-main">
                     <ul class="pro_list">
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/7207953e7b1d62e2ebc110581b3d031db6bb0839.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="电力线载波PLC智能网关"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#337ab7);">PLC智能网关</div></a>
                             <h2><a>电力线载波PLC智能网关</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/f23ea3af368a79ad63f4f542f938845e2ccab729.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无线数据接口显示屏"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#ff6600);">数据接口屏</div></a>
                             <h2><a>无线数据接口显示屏</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/728d89d4f6a26252a15a7b47fc92d0c5d5dcfe69.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="智能无线测温系统"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#5a9bd5);">无线测温</div></a>
                             <h2><a>智能无线测温系统</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/32f0702a67ddda04d58415953ff93fcff8d49115.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="5G工业路由器"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#337ab7);">5G路由器</div></a>
                             <h2><a>5G工业路由器</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/e03feea9b019e93f5ed2f6f60b791126c2d56ca6.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#1a3d6d);">工业电控</div></a>
                             <h2><a>工业电控</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/9cdda06bddc1eef2b7b278e102eaf51cb5cb54fa.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
+                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#2c5f9e);">工业电控</div></a>
                             <h2><a>工业电控</a></h2>
                         </li>
                     </ul>
@@ -434,21 +456,21 @@
             </div>
             <div class="c2ays">
                 <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="企业实力"></div>
+                    <div class="img"><svg viewBox="0 0 50 50" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2"><path d="M25 5 L40 15 L40 35 L25 45 L10 35 L10 15 Z"/><circle cx="25" cy="25" r="8"/><path d="M25 17 L25 33 M17 25 L33 25"/></svg></div>
                     <div class="liwz">
                         <h3>企业实力</h3>
                         <p>致力于为客户提供有竞争力的产品及全方位高质量的技术与商务服务。</p>
                     </div>
                 </li>
                 <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="研发团队"></div>
+                    <div class="img"><svg viewBox="0 0 50 50" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2"><circle cx="15" cy="25" r="10"/><circle cx="35" cy="25" r="10"/><path d="M15 20 L35 20 M15 30 L35 30"/><circle cx="25" cy="15" r="5"/></svg></div>
                     <div class="liwz">
                         <h3>研发团队</h3>
                         <p>公司研发团队来自Global及本土Top Tier1资深研发工程师，具备完整的汽车电子开发和量产的经验。</p>
                     </div>
                 </li>
                 <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="服务保障"></div>
+                    <div class="img"><svg viewBox="0 0 50 50" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2"><path d="M5 30 L15 10 L25 25 L35 15 L45 35"/><rect x="5" y="35" width="40" height="10" rx="2"/><path d="M20 5 L25 15 L30 5" stroke-width="3"/></svg></div>
                     <div class="liwz">
                         <h3>服务保障</h3>
                         <p>一年质保，有质量问题包退换，免费上门保修，724小时快速响应机制，免费提供技术升级、咨询服务，定期回访客户。</p>
@@ -457,13 +479,23 @@
             </div>
             <div class="c2dh flex">
                 <div class="c2dha">
-                    <img src="//cdn.myxypt.com/db68f539/23/03/0fad70ab028b0593cd85d0fa22a1bef0cedd7526.png" alt=""> 咨询热线：<span>027-86465464</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    咨询热线：<span>027-86465464</span>
                 </div>
                 <a href="#contact" class="c2dhb">立即咨询</a>
             </div>
         </div>
         <div class="c2b">
-            <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
+            <div class="adv-placeholder">
+                <svg viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="2" opacity="0.15">
+                    <rect x="30" y="50" width="140" height="100" rx="12"/>
+                    <circle cx="70" cy="90" r="20"/>
+                    <rect x="100" y="70" width="50" height="60" rx="4"/>
+                    <path d="M110 85 L140 85 M110 95 L140 95 M110 105 L130 105"/>
+                    <circle cx="100" cy="50" r="15"/>
+                    <path d="M100 35 L100 65 M85 50 L115 50"/>
+                </svg>
+            </div>
         </div>
     </div>
 </div>
@@ -475,27 +507,27 @@
         <div class="client-slider" id="clientSlider">
             <div class="client-slider-inner" id="clientSliderInner">
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/7badeaf30f4d425cb0bb2f1d2f3540daeda477a9.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="中国中车"></div>
+                    <div class="img"><span class="client-logo-text">中车</span></div>
                     <h3>中国中车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/c5628fb5830e0977de411b2829beec64c0e6b588.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="长城汽车"></div>
+                    <div class="img"><span class="client-logo-text">长城</span></div>
                     <h3>长城汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/3cda857195e27f024bed3ad61f2cb9319950c477.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="广汽集团"></div>
+                    <div class="img"><span class="client-logo-text">广汽</span></div>
                     <h3>广汽集团</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/8dd9c1201721ff20257d055fbfdd6c34b73008fb.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="小鹏汽车"></div>
+                    <div class="img"><span class="client-logo-text">小鹏</span></div>
                     <h3>小鹏汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/45943ade1f2120dacdc8938e30db5d658c0aead0.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="奇瑞汽车"></div>
+                    <div class="img"><span class="client-logo-text">奇瑞</span></div>
                     <h3>奇瑞汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/35580b23de3965bac77d5e0a5dac31fb9307e9bb.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="长安汽车"></div>
+                    <div class="img"><span class="client-logo-text">长安</span></div>
                     <h3>长安汽车</h3>
                 </div>
             </div>
@@ -517,7 +549,7 @@
         <div class="cc5a flex wow fadeInLeft">
             <li>
                 <a href="news1.html">
-                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bebae374ea3a0cac304adf7e1bd40e8756185eef.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="如何实现汽车电子定制化方案的精准定位？"></div>
+                    <div class="img com-img"><div class="news-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#5a9bd5);">汽车电子定制化</div></div>
                     <h3>如何实现汽车电子定制化方案的精准定位？</h3>
                     <p>随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足...</p>
                     <div class="lirq clearfix">
@@ -528,7 +560,7 @@
             </li>
             <li>
                 <a href="news2.html">
-                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/118af3ad5d79124d3e71b0f518cae3cdc0083d76.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="汽车电子定制化方案，是未来的发展趋势吗？"></div>
+                    <div class="img com-img"><div class="news-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#337ab7);">未来发展趋势</div></div>
                     <h3>汽车电子定制化方案，是未来的发展趋势吗？</h3>
                     <p>汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探...</p>
                     <div class="lirq clearfix">
@@ -541,49 +573,49 @@
         <div class="cc5b wow fadeInRight">
             <ul class="xx-news">
                 <li>
-                    <a href="news3.html">
+                    <a href="news3.html">
                         <p>2024-04-01 </p>
                         <span><h5>汽车电子技术的发展，深刻地影响着整个汽车行业。它在...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news4.html">
+                    <a href="news4.html">
                         <p>2024-04-01 </p>
                         <span><h5>未来汽车电子领域的创新点有很多，其中主要包括以下几...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news5.html">
+                    <a href="news5.html">
                         <p>2024-03-20 </p>
                         <span><h5>汽车电子和无人驾驶技术之间有着密不可分的关联。汽...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news6.html">
+                    <a href="news6.html">
                         <p>2024-03-20 </p>
                         <span><h5>汽车电子行业是汽车行业中不可或缺的一部分，随着科...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news7.html">
+                    <a href="news7.html">
                         <p>2024-01-26 </p>
                         <span><h5>汽车电子定制方案是指根据用户个人需求，提供个性化...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news8.html">
+                    <a href="news8.html">
                         <p>2024-01-26 </p>
                         <span><h5>汽车电子定制方案是根据不同汽车品牌和车型的需要，...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news9.html">
+                    <a href="news9.html">
                         <p>2023-12-05 </p>
                         <span><h5>在汽车电子领域，提升驾驶体验是一个重要的研发方向...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a href="news10.html">
+                    <a href="news10.html">
                         <p>2023-12-05 </p>
                         <span><h5>汽车电子定制方案在汽车行业的发展中扮演着重要的角...</h5></span>
                     </a>
@@ -599,9 +631,9 @@
         <div class="footera">
             <div class="ftwz">武汉朔丰电子科技有限公司</div>
             <div class="dblx">
-                <p><img src="//cdn.myxypt.com/db68f539/23/03/05a2ef1213e4256a4d8eb7afb83b80c5b4fa3405.png"/>电话：027-86465464</p>
-                <p><img src="//cdn.myxypt.com/db68f539/23/05/25720ac87b9fbbb8260812ecf52715122c60747c.png"/>邮箱：rain.xu@whshuofeng.com</p>
-                <p><img src="//cdn.myxypt.com/db68f539/23/03/ddafda64772f54709988ab4cb95d4829aab9d508.png"/>地址：武汉市汉阳区汉阳人信汇B地块9、10、11幢9号楼11层8号-7</p>
+                <p><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>电话：027-86465464</p>
+                <p><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>邮箱：rain.xu@whshuofeng.com</p>
+                <p><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>地址：武汉市汉阳区汉阳人信汇B地块9、10、11幢9号楼11层8号-7</p>
             </div>
         </div>
         <div class="footerb flex">
@@ -631,7 +663,7 @@
 <!-- ===== Copyright ===== -->
 <div class="foot">
     <div class="w1400">
-        Copyright © 武汉朔丰电子科技有限公司 All rights reserved 备案号：<a href="http://beian.miit.gov.cn/" target="_blank">ICP备XXXXXXXX号</a>
+        Copyright &copy; 武汉朔丰电子科技有限公司 All rights reserved 备案号：<a href="http://beian.miit.gov.cn/" target="_blank">ICP备XXXXXXXX号</a>
         <div class="jszc">
             技术支持：<a href="#">捷瑞科技</a>
         </div>
@@ -662,76 +694,92 @@
 <script>
     // ===== Banner Carousel =====
     (function() {
-        const track = document.querySelector('.banner-track');
-        const dots = document.querySelectorAll('.banner-dot');
-        const prevBtn = document.getElementById('bannerPrev');
-        const nextBtn = document.getElementById('bannerNext');
-        let current = 0;
-        const total = dots.length;
+        var track = document.querySelector('.banner-track');
+        var dots = document.querySelectorAll('.banner-dot');
+        var prevBtn = document.getElementById('bannerPrev');
+        var nextBtn = document.getElementById('bannerNext');
+        var current = 0;
+        var total = dots.length;
 
         function goTo(index) {
             current = (index + total) % total;
             track.style.transform = 'translateX(-' + current * 100 + '%)';
-            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.toggle('active', i === current);
+            }
         }
 
-        prevBtn.addEventListener('click', () => goTo(current - 1));
-        nextBtn.addEventListener('click', () => goTo(current + 1));
-        dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
+        prevBtn.addEventListener('click', function() { goTo(current - 1); });
+        nextBtn.addEventListener('click', function() { goTo(current + 1); });
+        for (var i = 0; i < dots.length; i++) {
+            dots[i].addEventListener('click', function() { goTo(parseInt(this.dataset.index)); });
+        }
 
-        let autoPlay = setInterval(() => goTo(current + 1), 4000);
-        document.querySelector('.banner-carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
-        document.querySelector('.banner-carousel').addEventListener('mouseleave', () => { autoPlay = setInterval(() => goTo(current + 1), 4000); });
+        var autoPlay = setInterval(function() { goTo(current + 1); }, 4000);
+        document.querySelector('.banner-carousel').addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+        document.querySelector('.banner-carousel').addEventListener('mouseleave', function() { autoPlay = setInterval(function() { goTo(current + 1); }, 4000); });
     })();
 
     // ===== Tab Switching =====
     (function() {
-        const tabs = document.querySelectorAll('.tab-li li');
-        const panels = document.querySelectorAll('.tab-main');
-        tabs.forEach(tab => {
-            tab.addEventListener('mouseenter', function() {
-                const idx = this.index !== undefined ? this.index : Array.from(tabs).indexOf(this);
-                tabs.forEach(t => t.classList.remove('active'));
-                panels.forEach(p => p.classList.remove('active'));
+        var tabs = document.querySelectorAll('.tab-li li');
+        var panels = document.querySelectorAll('.tab-main');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('mouseenter', function() {
+                var idx = Array.from(tabs).indexOf(this);
+                for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+                for (var j = 0; j < panels.length; j++) panels[j].classList.remove('active');
                 this.classList.add('active');
                 panels[idx].classList.add('active');
             });
-        });
+        }
     })();
 
     // ===== WOW Animation =====
     (function() {
-        const wowElements = document.querySelectorAll('.wow');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        var wowElements = document.querySelectorAll('.wow');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });
-        wowElements.forEach(el => observer.observe(el));
+        wowElements.forEach(function(el) { observer.observe(el); });
     })();
 
     // ===== Client Slider =====
     (function() {
-        const inner = document.getElementById('clientSliderInner');
-        const slider = document.getElementById('clientSlider');
-        let clientOffset = 0;
-        const cardWidth = inner.querySelector('.client-card').offsetWidth + 20; // card width + margin
-        const totalCards = inner.children.length;
-        const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
-        const maxOffset = Math.max(0, (totalCards - visibleCards) * cardWidth);
+        var inner = document.getElementById('clientSliderInner');
+        var slider = document.getElementById('clientSlider');
+        var clientOffset = 0;
+        var cardWidth = 0;
+        var totalCards = inner.children.length;
+        var visibleCards = 0;
+        var maxOffset = 0;
+
+        function recalc() {
+            var firstCard = inner.querySelector('.client-card');
+            if (!firstCard) return;
+            cardWidth = firstCard.offsetWidth + 20;
+            visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+            maxOffset = Math.max(0, (totalCards - visibleCards) * cardWidth);
+        }
+
+        recalc();
+        window.addEventListener('resize', recalc);
 
         window.slideClients = function(dir) {
-            clientOffset += dir * cardWidth * 2; // slide 2 cards at a time
+            recalc();
+            clientOffset += dir * cardWidth * 2;
             if (clientOffset < 0) clientOffset = 0;
             if (clientOffset > maxOffset) clientOffset = maxOffset;
             inner.style.transform = 'translateX(-' + clientOffset + 'px)';
         };
 
-        // Auto slide every 3 seconds
-        let autoSlide = setInterval(function() {
+        var autoSlide = setInterval(function() {
+            recalc();
             clientOffset += cardWidth;
             if (clientOffset > maxOffset) clientOffset = 0;
             inner.style.transform = 'translateX(-' + clientOffset + 'px)';
@@ -740,12 +788,13 @@
         slider.addEventListener('mouseenter', function() { clearInterval(autoSlide); });
         slider.addEventListener('mouseleave', function() {
             autoSlide = setInterval(function() {
+                recalc();
                 clientOffset += cardWidth;
                 if (clientOffset > maxOffset) clientOffset = 0;
                 inner.style.transform = 'translateX(-' + clientOffset + 'px)';
             }, 3000);
         });
-    })(););
+    })();
 
     // ===== Back to Top =====
     document.getElementById('backToTop').addEventListener('click', function(e) {
@@ -754,9 +803,9 @@
     });
 
     // ===== Smooth scroll for anchors =====
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
         a.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
+            var target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -764,9 +813,6 @@
         });
     });
 </script>
-
-
-</div>
 
 </body>
 </html>
