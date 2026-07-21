@@ -2,726 +2,95 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>武汉朔丰电子科技有限公司</title>
-    <meta name="keywords" content="武汉朔丰电子科技有限公司"/>
-    <meta name="description" content="武汉朔丰电子科技有限公司"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网站备案中 - 武汉朔丰电子科技有限公司</title>
     <style>
-        /* ===== Reset ===== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif; color: #333; background: #fff; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; border: 0; }
-        .clearfix::after { content: ""; display: block; clear: both; }
-        .flex { display: flex; }
-
-        /* ===== Layout ===== */
-        .w1400 { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
-        .w1500 { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
-
-        /* ===== Colors ===== */
-        :root {
-            --blue: #337ab7;
-            --blue-dark: #2c5f9e;
-            --blue-light: #5a9bd5;
-            --blue-bg: #f5f8fc;
-            --orange: #ff6600;
-            --dark: #222;
-            --gray: #666;
-            --light-gray: #999;
-            --border: #e5e5e5;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #e8f0fe 0%, #f5f8fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
         }
-
-        /* ===== Top Bar ===== */
-        .top_head { background: #2c5f9e; color: #fff; padding: 10px 0; font-size: 14px; }
-        .top_head .w1400 { display: flex; justify-content: space-between; align-items: center; }
-        .top_heada { flex: 1; }
-        .top_headb { display: flex; align-items: center; gap: 20px; }
-        .topdh { display: flex; align-items: center; gap: 8px; }
-        .topdh img { width: 28px; height: 28px; }
-        .topdh h5 { font-size: 14px; font-weight: normal; }
-        .topdh h5 span { font-weight: bold; color: #fff; font-size: 16px; }
-        .toplink a { color: rgba(255,255,255,0.85); margin-right: 10px; font-size: 13px; }
-        .toplink a:hover { color: #fff; }
-
-        /* ===== Header ===== */
-        .header { background: #fff; padding: 15px 0; border-bottom: 2px solid var(--blue); }
-        .header .w1400 { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logoimg img { height: 50px; }
-        .logotext { font-size: 28px; font-weight: bold; color: var(--blue-dark); }
-        .logowz dd { font-size: 20px; font-weight: bold; color: var(--blue-dark); }
-        .logowz dt { font-size: 12px; color: var(--gray); }
-
-        /* ===== Nav ===== */
-        .x-menu { display: flex; align-items: center; }
-        .x-menu > li { position: relative; }
-        .x-menu > li > a { display: block; padding: 10px 18px; font-size: 15px; color: #333; font-weight: 500; transition: all 0.3s; }
-        .x-menu > li:hover > a, .x-menu > li.active > a { color: var(--blue); background: var(--blue-bg); }
-        .x-sub-menu { position: absolute; top: 100%; left: 0; background: #fff; min-width: 160px; border-top: 2px solid var(--blue); box-shadow: 0 3px 10px rgba(0,0,0,0.15); display: none; z-index: 100; }
-        .x-menu > li:hover .x-sub-menu { display: block; }
-        .x-sub-menu li a { display: block; padding: 10px 16px; font-size: 14px; color: #555; border-bottom: 1px solid #eee; transition: 0.3s; }
-        .x-sub-menu li a:hover { color: var(--blue); background: var(--blue-bg); }
-
-        /* ===== Banner ===== */
-        .x-banner { overflow: hidden; position: relative; }
-        .banner-carousel { position: relative; overflow: hidden; }
-        .banner-track { display: flex; transition: transform 0.6s ease; }
-        .banner-item { flex: 0 0 100%; }
-        .banner-item img { width: 100%; height: auto; min-height: 400px; object-fit: cover; }
-        .banner-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
-        .banner-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: 0.3s; }
-        .banner-dot.active { background: #fff; transform: scale(1.2); }
-        .banner-arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 10; }
-        .banner-arrow { width: 40px; height: 60px; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; transition: 0.3s; }
-        .banner-arrow:hover { background: rgba(0,0,0,0.6); }
-
-        /* ===== Section Title ===== */
-        .ccb { padding: 40px 0 0; }
-        .ccb h3 { font-size: 24px; color: var(--blue-dark); text-align: center; position: relative; padding-bottom: 15px; }
-        .ccb h3::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--blue); }
-
-        /* ===== About Section ===== */
-        .cc4 { padding: 40px 0 60px; background: var(--blue-bg); }
-        .cc4 .w1400 { display: flex; gap: 40px; align-items: stretch; }
-        .c4img { flex: 0 0 45%; overflow: hidden; }
-        .c4img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
-        .c4ab { flex: 1; }
-        .c4ab h3 { font-size: 22px; color: var(--blue-dark); margin-bottom: 10px; }
-        .c4ab h4 { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
-        .c4ab .abwz { font-size: 15px; color: #555; line-height: 2em; }
-        .c4mor { display: inline-block; margin-top: 20px; padding: 10px 30px; background: var(--blue); color: #fff; font-size: 14px; border-radius: 4px; transition: 0.3s; }
-        .c4mor:hover { background: var(--blue-dark); }
-
-        /* ===== Business Tab ===== */
-        .promenu2 { margin-bottom: 20px; }
-        .tab-li { display: flex; justify-content: center; gap: 0; }
-        .tab-li li { flex: 1; max-width: 200px; }
-        .tab-li li a { display: block; padding: 12px 20px; text-align: center; font-size: 16px; color: #555; background: #f0f0f0; border: 1px solid #e5e5e5; transition: 0.3s; }
-        .tab-li li.active a, .tab-li li:hover a { background: var(--blue); color: #fff; border-color: var(--blue); }
-        .tab-con { position: relative; }
-        .tab-main { display: none; }
-        .tab-main.active { display: block; }
-
-        /* ===== Product List ===== */
-        .pro_list { display: flex; gap: 20px; flex-wrap: wrap; }
-        .pro_list li { flex: 0 0 calc(33.33% - 14px); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: 0.3s; }
-        .pro_list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
-        .pro_list li .com-img { display: block; overflow: hidden; }
-        .pro_list li .com-img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .pro_list li:hover .com-img img { transform: scale(1.05); }
-        .pro_list li h2 { padding: 12px 10px; font-size: 15px; text-align: center; }
-        .pro_list li h2 a { color: #333; transition: 0.3s; }
-        .pro_list li h2 a:hover { color: var(--blue); }
-
-        /* ===== 3 Advantages ===== */
-        .c2 { background: linear-gradient(135deg, #2c5f9e 0%, #337ab7 100%); padding: 60px 0; color: #fff; }
-        .c2 .w1400 { display: flex; gap: 40px; align-items: stretch; }
-        .c2a { flex: 1; }
-        .c2abt dd { font-size: 28px; margin-bottom: 10px; }
-        .c2abt dd span { color: var(--orange); }
-        .c2abt dt { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
-        .c2ays li { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
-        .c2ays li .img { flex: 0 0 50px; }
-        .c2ays li .img img { width: 50px; height: 50px; }
-        .c2ays li .liwz h3 { font-size: 18px; margin-bottom: 5px; }
-        .c2ays li .liwz p { font-size: 13px; color: rgba(255,255,255,0.8); }
-        .c2dh { display: flex; align-items: center; gap: 15px; margin-top: 30px; }
-        .c2dha { display: flex; align-items: center; gap: 5px; font-size: 16px; }
-        .c2dha img { width: 22px; height: 22px; }
-        .c2dha span { color: var(--orange); font-size: 22px; font-weight: bold; }
-        .c2dhb { display: inline-block; padding: 10px 25px; background: var(--orange); color: #fff; font-size: 15px; border-radius: 4px; transition: 0.3s; }
-        .c2dhb:hover { background: #e55e00; }
-        .c2b { flex: 0 0 40%; }
-        .c2b img { width: 100%; border-radius: 8px; }
-
-        /* ===== Service Clients ===== */
-        .cc3 { padding: 50px 0; background: #f8f8f8; }
-        .c3bt { text-align: center; margin-bottom: 30px; }
-        .c3bt dd { font-size: 24px; color: var(--blue-dark); }
-        .case-scroll { overflow: hidden; position: relative; }
-        .case-track { display: flex; gap: 20px; animation: scrollLogos 30s linear infinite; }
-        .case-track li { flex: 0 0 180px; display: flex; align-items: center; justify-content: center; height: 80px; background: #fff; border: 1px solid #eee; border-radius: 4px; padding: 10px; }
-        .case-track li img { max-width: 140px; max-height: 50px; object-fit: contain; }
-        @keyframes scrollLogos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* ===== News ===== */
-        .cc5 { padding: 50px 0; }
-        .c5bt { text-align: center; margin-bottom: 30px; }
-        .c5bt dd { font-size: 24px; color: var(--blue-dark); }
-        .c5bt dt { font-size: 14px; color: var(--gray); }
-        .cc5 .w1400 { display: flex; gap: 30px; }
-        .cc5a { flex: 0 0 45%; display: flex; gap: 15px; }
-        .cc5a li { flex: 1; }
-        .cc5a li a { display: block; background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; }
-        .cc5a li a:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .cc5a li .img { overflow: hidden; }
-        .cc5a li .img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .cc5a li a:hover .img img { transform: scale(1.05); }
-        .cc5a li h3 { padding: 12px 15px 5px; font-size: 16px; color: #333; }
-        .cc5a li p { padding: 0 15px; font-size: 13px; color: var(--gray); line-height: 1.5; }
-        .cc5a li .lirq { display: flex; justify-content: space-between; padding: 10px 15px; font-size: 12px; color: var(--light-gray); }
-        .cc5b { flex: 1; }
-        .xx-news li { padding: 12px 0; border-bottom: 1px dashed #eee; }
-        .xx-news li a { display: block; }
-        .xx-news li h3 { font-size: 15px; color: #333; margin-bottom: 5px; transition: 0.3s; }
-        .xx-news li a:hover h3 { color: var(--blue); }
-        .xx-news li p { font-size: 12px; color: var(--light-gray); }
-        .xx-news li span h5 { font-size: 13px; color: #777; line-height: 1.4; }
-
-        /* ===== Footer ===== */
-        .footer { background: #2c5f9e; color: #fff; padding: 40px 0; }
-        .footer .w1400 { display: flex; gap: 40px; }
-        .footera { flex: 1; }
-        .ftwz { font-size: 20px; font-weight: bold; margin-bottom: 15px; }
-        .dblx p { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 14px; }
-        .dblx p img { width: 18px; height: 18px; }
-        .dbfx { margin-top: 15px; }
-        .footerb { flex: 0 0 45%; display: flex; gap: 20px; }
-        .fot { flex: 1; }
-        .fot dd { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
-        .fot dt { margin-bottom: 8px; }
-        .fot dt a { font-size: 14px; color: rgba(255,255,255,0.8); transition: 0.3s; }
-        .fot dt a:hover { color: #fff; }
-
-        /* ===== Copyright ===== */
-        .foot { background: #1a3d6d; color: rgba(255,255,255,0.6); padding: 15px 0; font-size: 13px; text-align: center; }
-        .foot a { color: rgba(255,255,255,0.7); }
-        .foot a:hover { color: #fff; }
-        .jszc { margin-top: 5px; }
-
-        /* ===== Side Toolbar ===== */
-        .toolbar { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 999; }
-        .toolbar ul { list-style: none; }
-        .toolbar li { position: relative; }
-        .toolbar li > a, .toolbar li > span { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--blue); color: #fff; cursor: pointer; transition: 0.3s; }
-        .toolbar li > a:hover, .toolbar li:hover > span { background: var(--blue-dark); }
-        .toolbar .icon { font-size: 20px; }
-        .toolbar .wz { font-size: 12px; margin-top: 2px; }
-        .toolbar .phone .tel-phone { position: absolute; right: 50px; top: 0; background: var(--blue); color: #fff; padding: 10px 15px; font-size: 14px; white-space: nowrap; display: none; border-radius: 4px 0 0 4px; }
-        .toolbar .phone:hover .tel-phone { display: block; }
-        .toolbar .ewm .ewm-box { position: absolute; right: 50px; top: 0; background: #fff; padding: 10px; border-radius: 4px; display: none; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-        .toolbar .ewm:hover .ewm-box { display: block; }
-        .toolbar .ewm .ewm-box img { width: 120px; height: 120px; }
-        .toolbar .backtop a { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--blue); color: #fff; }
-
-        /* ===== Mobile Footer ===== */
-        .mob-footer { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #eee; z-index: 999; }
-        .mob-footer ul { display: flex; }
-        .mob-footer li { flex: 1; }
-        .mob-footer li a { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 0; font-size: 12px; color: #666; }
-        .mob-footer li a .iconfont { font-size: 20px; margin-bottom: 2px; }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 768px) {
-            .top_head { display: none; }
-            .header .w1400 { flex-direction: column; align-items: center; }
-            .x-menu { flex-wrap: wrap; justify-content: center; }
-            .x-menu > li > a { padding: 8px 12px; font-size: 13px; }
-            .x-sub-menu { display: none !important; }
-            .banner-item img { min-height: 200px; }
-            .cc4 .w1400 { flex-direction: column; }
-            .c4img { flex: none; }
-            .c2 .w1400 { flex-direction: column; }
-            .c2b { flex: none; }
-            .pro_list li { flex: 0 0 calc(50% - 10px); }
-            .cc5 .w1400 { flex-direction: column; }
-            .cc5a { flex: none; }
-            .footer .w1400 { flex-direction: column; }
-            .footerb { flex: none; }
-            .mob-footer { display: block; }
-            .toolbar { display: none; }
-            .tab-li li a { font-size: 14px; padding: 8px 12px; }
+        .container {
+            text-align: center;
+            padding: 60px 40px;
+            max-width: 600px;
         }
-
-        @media (max-width: 480px) {
-            .pro_list li { flex: 0 0 100%; }
-            .cc5a { flex-direction: column; }
+        .icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            color: #2c5f9e;
         }
-
-        /* ===== Animations ===== */
-        .wow { opacity: 0; transition: opacity 0.6s, transform 0.6s; }
-        .wow.visible { opacity: 1; transform: none; }
-        .fadeInUp { transform: translateY(30px); }
-        .fadeInLeft { transform: translateX(-30px); }
-        .fadeInRight { transform: translateX(30px); }
+        .icon svg {
+            width: 80px;
+            height: 80px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #2c5f9e;
+            margin-bottom: 20px;
+        }
+        .msg {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .company {
+            font-size: 14px;
+            color: #999;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .progress-bar {
+            width: 300px;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        .progress-bar-inner {
+            height: 100%;
+            width: 30%;
+            background: #2c5f9e;
+            border-radius: 3px;
+            animation: progress 2s ease-in-out infinite;
+        }
+        @keyframes progress {
+            0% { width: 10%; }
+            50% { width: 40%; }
+            100% { width: 10%; }
+        }
     </style>
 </head>
 <body>
-
-<!-- ===== Top Bar ===== -->
-<div class="top_head">
-    <div class="w1400 flex">
-        <div class="top_heada"></div>
-        <div class="top_headb flex">
-            <div class="topdh">
-                <img src="//cdn.myxypt.com/db68f539/23/03/a3ca3e176822afbfcd17d84fe2592cbf046d5ac7.png" alt="">
-                <h5><p>咨询热线：<span>027-86465464</span></p></h5>
-            </div>
-            <div class="toplink">
-                <a href="mailto:rain.xu@whshuofeng.cn">企业邮箱</a>
-            </div>
+    <div class="container">
+        <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+        </div>
+        <h1>网站备案审核中</h1>
+        <div class="progress-bar">
+            <div class="progress-bar-inner"></div>
+        </div>
+        <div class="msg">
+            本网站正在按照国家相关规定进行ICP备案审核，<br>
+            审核通过后将恢复正常访问。<br>
+            请耐心等待，感谢您的理解与支持。
+        </div>
+        <div class="company">
+            武汉朔丰电子科技有限公司<br>
+            联系邮箱：rain.xu@whshuofeng.cn
         </div>
     </div>
-</div>
-
-<!-- ===== Header ===== -->
-<div class="header">
-    <div class="w1400 flex">
-        <div class="logo flex">
-            <div class="logoimg"><a href="/" style="display:flex;align-items:center;gap:8px;"><span style="font-size:28px;font-weight:bold;color:#2c5f9e;">朔丰电子</span></a></div>
-            <div class="logowz">
-                <a href="/">
-                    <dd><small>武汉</small>朔丰电子科技有限公司</dd>
-                    <dt>Wuhan Shuofeng Electronic Technology</dt>
-                </a>
-            </div>
-        </div>
-        <div class="nnav">
-            <ul class="x-menu clearfix">
-                <li><a href="/">首页</a></li>
-                <li>
-                    <a href="#about">关于我们</a>
-                    <ul class="x-sub-menu">
-                        <li><a href="#about">公司简介</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#business">业务范围</a>
-                    <ul class="x-sub-menu">
-                        <li><a href="#business">汽车电子</a></li>
-                        <li><a href="#business">工业控制及自动化</a></li>
-                    </ul>
-                </li>
-                <li><a href="#clients">服务客户</a></li>
-                <li><a href="#news">新闻中心</a></li>
-                <li><a href="#contact">在线留言</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- ===== Banner ===== -->
-<div class="x-banner">
-    <div class="banner-carousel" id="bannerCarousel">
-        <div class="banner-track">
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/06/05ba262cd7e4cdcf5f016b5afd9e55e1fe13f200.jpg" alt=""></div>
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/8cd5ab12f0bf203896e4675df4c870d091df0842.jpg" alt=""></div>
-            <div class="banner-item"><img src="//cdn.myxypt.com/db68f539/23/05/5da2bde998bedcc00fd4caa469b3a289dd7804ab.jpg" alt=""></div>
-        </div>
-        <div class="banner-dots" id="bannerDots">
-            <div class="banner-dot active" data-index="0"></div>
-            <div class="banner-dot" data-index="1"></div>
-            <div class="banner-dot" data-index="2"></div>
-        </div>
-        <div class="banner-arrows">
-            <div class="banner-arrow" id="bannerPrev">&#10094;</div>
-            <div class="banner-arrow" id="bannerNext">&#10095;</div>
-        </div>
-    </div>
-</div>
-
-<!-- ===== About Us ===== -->
-<div class="c1" id="about">
-    <div class="w1400">
-        <div class="ccb wow fadeInUp"><h3>关于我们</h3></div>
-        <div class="cc4 wow fadeInUp">
-            <div class="w1400 clearfix">
-                <div class="c4img">
-                    <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
-                </div>
-                <div class="c4ab">
-                    <h3>武汉朔丰电子科技有限公司</h3>
-                    <h4>专注于汽车电子应用市场解决方案</h4>
-                    <div class="abwz">
-                        <p style="line-height: 2em;">&nbsp;武汉朔丰电子科技有限公司是一家专注于汽车电子应用市场解决方案的公司，致力于为客户提供有竞争力的产品及全方位高质量的技术与商务服务。</p>
-                        <p style="line-height: 2em;">&nbsp;未来朔丰将坚持深耕产品应用技术，专注于在汽车车身控制、电机控制器、BMS控制器、ADAS等汽车核心领域的应用研发和市场布局。</p>
-                    </div>
-                    <a href="#about" class="c4mor">查看更多</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== Business Scope ===== -->
-        <div class="ccb wow fadeInUp" id="business">
-            <h3>业务范围</h3>
-            <div class="promenu2">
-                <ul class="tab-li flex">
-                    <li class="active"><a href="#business">汽车电子</a></li>
-                    <li><a href="#business">工业控制及自动化</a></li>
-                </ul>
-            </div>
-            <div class="tab-con">
-                <!-- Tab 1: 汽车电子 -->
-                <div class="tab-main active">
-                    <ul class="pro_list">
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/2e7933e31d581fbb92b80673eade81a77e0cb85b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的摩托车PKG方案"></a>
-                            <h2><a>可量产的摩托车PKG方案</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/159756744f5dcb6fe40d8782a1bd550a9fb2e566.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的PEPS方案"></a>
-                            <h2><a>可量产的PEPS方案</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/371323e9830fd0d411c84ec0f6ca6d96478c8c29.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的氛围灯方案"></a>
-                            <h2><a>可量产的氛围灯方案</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/8c2f361969afd39fcbdff41ea82e67b131a40ad5.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="可量产的数字钥匙NFC方案"></a>
-                            <h2><a>可量产的数字钥匙NFC方案</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bf79deba7427de8b8c2affc94c4dfb0be531791b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="汽车LED灯光驱动方案"></a>
-                            <h2><a>汽车LED灯光驱动方案</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/c2485697cf65792d0722a950441f6be1d7d9602b.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无刷电机FOC驱动方案"></a>
-                            <h2><a>无刷电机FOC驱动方案</a></h2>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Tab 2: 工业控制及自动化 -->
-                <div class="tab-main">
-                    <ul class="pro_list">
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/7207953e7b1d62e2ebc110581b3d031db6bb0839.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="电力线载波PLC智能网关"></a>
-                            <h2><a>电力线载波PLC智能网关</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/f23ea3af368a79ad63f4f542f938845e2ccab729.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="无线数据接口显示屏"></a>
-                            <h2><a>无线数据接口显示屏</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/728d89d4f6a26252a15a7b47fc92d0c5d5dcfe69.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="智能无线测温系统"></a>
-                            <h2><a>智能无线测温系统</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/06/32f0702a67ddda04d58415953ff93fcff8d49115.png?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="5G工业路由器"></a>
-                            <h2><a>5G工业路由器</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/e03feea9b019e93f5ed2f6f60b791126c2d56ca6.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
-                            <h2><a>工业电控</a></h2>
-                        </li>
-                        <li>
-                            <a class="com-img"><img src="//cdn.myxypt.com/db68f539/23/05/9cdda06bddc1eef2b7b278e102eaf51cb5cb54fa.jpg?x-oss-process=image/resize,m_lfit,h_518,w_800" alt="工业电控"></a>
-                            <h2><a>工业电控</a></h2>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ===== 3 Advantages ===== -->
-<div class="c2">
-    <div class="w1400 flex wow fadeInUp">
-        <div class="c2a">
-            <div class="c2abt">
-                <dd>选择我们的<span>3</span>大优势</dd>
-                <dt>竭诚为您提供汽车电子应用市场解决方案</dt>
-            </div>
-            <div class="c2ays">
-                <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="企业实力"></div>
-                    <div class="liwz">
-                        <h3>企业实力</h3>
-                        <p>致力于为客户提供有竞争力的产品及全方位高质量的技术与商务服务。</p>
-                    </div>
-                </li>
-                <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="研发团队"></div>
-                    <div class="liwz">
-                        <h3>研发团队</h3>
-                        <p>公司研发团队来自Global及本土Top Tier1资深研发工程师，具备完整的汽车电子开发和量产的经验。</p>
-                    </div>
-                </li>
-                <li class="flex">
-                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="服务保障"></div>
-                    <div class="liwz">
-                        <h3>服务保障</h3>
-                        <p>一年质保，有质量问题包退换，免费上门保修，724小时快速响应机制，免费提供技术升级、咨询服务，定期回访客户。</p>
-                    </div>
-                </li>
-            </div>
-            <div class="c2dh flex">
-                <div class="c2dha">
-                    <img src="//cdn.myxypt.com/db68f539/23/03/0fad70ab028b0593cd85d0fa22a1bef0cedd7526.png" alt=""> 咨询热线：<span>027-86465464</span>
-                </div>
-                <a href="#contact" class="c2dhb">立即咨询</a>
-            </div>
-        </div>
-        <div class="c2b">
-            <img src="//cdn.myxypt.com/db68f539/23/05/80e43bf6cda8329ece0c8eaaaf8fab6a2a865ebc.png" alt="">
-        </div>
-    </div>
-</div>
-
-<!-- ===== Service Clients ===== -->
-<div class="cc3 wow fadeInUp" id="clients">
-    <div class="c3bt"><dd>服务客户</dd></div>
-    <div class="w1500">
-        <div class="case-scroll">
-            <ul class="case-track" id="clientTrack">
-                <!-- First set -->
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
-                <!-- Duplicate set for seamless scroll -->
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- ===== News ===== -->
-<div class="cc5" id="news">
-    <div class="c5bt wow fadeInUp">
-        <dd>新闻资讯</dd>
-        <dt>聚焦行业资讯，了解企业动态，解决技术疑难</dt>
-    </div>
-    <div class="w1400 flex">
-        <div class="cc5a flex wow fadeInLeft">
-            <li>
-                <a>
-                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bebae374ea3a0cac304adf7e1bd40e8756185eef.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="如何实现汽车电子定制化方案的精准定位？"></div>
-                    <h3>如何实现汽车电子定制化方案的精准定位？</h3>
-                    <p>随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足...</p>
-                    <div class="lirq clearfix">
-                        <dd>2023-05-01</dd>
-                        <dt>阅读更多 &nbsp;&nbsp; →</dt>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/118af3ad5d79124d3e71b0f518cae3cdc0083d76.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="汽车电子定制化方案，是未来的发展趋势吗？"></div>
-                    <h3>汽车电子定制化方案，是未来的发展趋势吗？</h3>
-                    <p>汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探...</p>
-                    <div class="lirq clearfix">
-                        <dd>2023-05-01</dd>
-                        <dt>阅读更多 &nbsp;&nbsp; →</dt>
-                    </div>
-                </a>
-            </li>
-        </div>
-        <div class="cc5b wow fadeInRight">
-            <ul class="xx-news">
-                <li>
-                    <a>
-                        <h3>汽车电子技术对汽车行业的影响有哪些？</h3>
-                        <p>2024-04-01 </p>
-                        <span><h5>汽车电子技术的发展，深刻地影响着整个汽车行业。它在...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>未来汽车电子领域的创新点在哪里？</h3>
-                        <p>2024-04-01 </p>
-                        <span><h5>未来汽车电子领域的创新点有很多，其中主要包括以下几...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>汽车电子和无人驾驶技术之间有何关联？</h3>
-                        <p>2024-03-20 </p>
-                        <span><h5>汽车电子和无人驾驶技术之间有着密不可分的关联。汽...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>未来十年的汽车电子行业会如何发展？</h3>
-                        <p>2024-03-20 </p>
-                        <span><h5>汽车电子行业是汽车行业中不可或缺的一部分，随着科...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>汽车电子定制方案个性化驾驶体验的未来之路</h3>
-                        <p>2024-01-26 </p>
-                        <span><h5>汽车电子定制方案是指根据用户个人需求，提供个性化...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>汽车电子定制方案是什么？如何实现？</h3>
-                        <p>2024-01-26 </p>
-                        <span><h5>汽车电子定制方案是根据不同汽车品牌和车型的需要，...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>汽车电子定制方案：如何全面提升驾驶体验？</h3>
-                        <p>2023-12-05 </p>
-                        <span><h5>在汽车电子领域，提升驾驶体验是一个重要的研发方向...</h5></span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <h3>如何选择适合自己的汽车电子定制方案？</h3>
-                        <p>2023-12-05 </p>
-                        <span><h5>汽车电子定制方案在汽车行业的发展中扮演着重要的角...</h5></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- ===== Footer ===== -->
-<div class="footer" id="contact">
-    <div class="w1400 flex">
-        <div class="footera">
-            <div class="ftwz">武汉朔丰电子科技有限公司</div>
-            <div class="dblx">
-                <p><img src="//cdn.myxypt.com/db68f539/23/03/05a2ef1213e4256a4d8eb7afb83b80c5b4fa3405.png"/>电话：027-86465464</p>
-                <p><img src="//cdn.myxypt.com/db68f539/23/05/25720ac87b9fbbb8260812ecf52715122c60747c.png"/>邮箱：rain.xu@whshuofeng.cn</p>
-                <p><img src="//cdn.myxypt.com/db68f539/23/03/ddafda64772f54709988ab4cb95d4829aab9d508.png"/>地址：武汉市汉阳区汉阳人信汇B地块9、10、11幢9号楼11层8号-7</p>
-            </div>
-        </div>
-        <div class="footerb flex">
-            <div class="fot">
-                <dd>关于我们</dd>
-                <dt><a href="#about">公司简介</a></dt>
-            </div>
-            <div class="fot">
-                <dd>产品中心</dd>
-                <dt><a href="#business">汽车电子</a></dt>
-                <dt><a href="#business">工业控制及自动化</a></dt>
-            </div>
-            <div class="fot">
-                <dd>工程案例</dd>
-                <dt><a href="#clients">服务客户</a></dt>
-            </div>
-            <div class="fot">
-                <dd>新闻中心</dd>
-                <dt><a href="#news">公司新闻</a></dt>
-                <dt><a href="#news">行业资讯</a></dt>
-                <dt><a href="#news">技术资讯</a></dt>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ===== Copyright ===== -->
-<div class="foot">
-    <div class="w1400">
-        Copyright © 武汉朔丰电子科技有限公司 All rights reserved 备案号：<a href="http://beian.miit.gov.cn/" target="_blank">ICP备XXXXXXXX号</a>
-        <div class="jszc">
-            技术支持：<a href="#">捷瑞科技</a>
-        </div>
-    </div>
-</div>
-
-<!-- ===== Mobile Footer ===== -->
-<div class="mob-footer">
-    <ul>
-        <li><a href="/">⌂ <span>首页</span></a></li>
-        <li><a href="tel:027-86465464">📞 <span>电话</span></a></li>
-        <li><a href="#contact">✉ <span>联系</span></a></li>
-    </ul>
-</div>
-
-<!-- ===== Side Toolbar ===== -->
-<div class="toolbar">
-    <ul>
-        <li class="phone" style="background: var(--blue)">
-            <span><span class="icon">📞</span><span class="wz">热线</span></span>
-            <div class="tel-phone" style="background: var(--blue)">027-86465464</div>
-        </li>
-        <li><a href="#contact" style="background: var(--blue)"><span class="icon">✉</span><span class="wz">留言</span></a></li>
-        <li class="backtop"><a href="#" id="backToTop" style="background: var(--blue)"><span class="icon">↑</span><span class="wz">TOP</span></a></li>
-    </ul>
-</div>
-
-<script>
-    // ===== Banner Carousel =====
-    (function() {
-        const track = document.querySelector('.banner-track');
-        const dots = document.querySelectorAll('.banner-dot');
-        const prevBtn = document.getElementById('bannerPrev');
-        const nextBtn = document.getElementById('bannerNext');
-        let current = 0;
-        const total = dots.length;
-
-        function goTo(index) {
-            current = (index + total) % total;
-            track.style.transform = 'translateX(-' + current * 100 + '%)';
-            dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        }
-
-        prevBtn.addEventListener('click', () => goTo(current - 1));
-        nextBtn.addEventListener('click', () => goTo(current + 1));
-        dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
-
-        let autoPlay = setInterval(() => goTo(current + 1), 4000);
-        document.querySelector('.banner-carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
-        document.querySelector('.banner-carousel').addEventListener('mouseleave', () => { autoPlay = setInterval(() => goTo(current + 1), 4000); });
-    })();
-
-    // ===== Tab Switching =====
-    (function() {
-        const tabs = document.querySelectorAll('.tab-li li');
-        const panels = document.querySelectorAll('.tab-main');
-        tabs.forEach(tab => {
-            tab.addEventListener('mouseenter', function() {
-                const idx = this.index !== undefined ? this.index : Array.from(tabs).indexOf(this);
-                tabs.forEach(t => t.classList.remove('active'));
-                panels.forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
-                panels[idx].classList.add('active');
-            });
-        });
-    })();
-
-    // ===== WOW Animation =====
-    (function() {
-        const wowElements = document.querySelectorAll('.wow');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        wowElements.forEach(el => observer.observe(el));
-    })();
-
-    // ===== Back to Top =====
-    document.getElementById('backToTop').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ===== Smooth scroll for anchors =====
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
-
 </body>
 </html>
