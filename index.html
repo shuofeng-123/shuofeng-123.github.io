@@ -177,6 +177,16 @@
         .xx-news li p { font-size: 12px; color: var(--light-gray); }
         .xx-news li span h5 { font-size: 13px; color: #777; line-height: 1.4; }
 
+        /* ===== News Modal ===== */
+        .news-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+        .news-modal.active { display: flex; }
+        .news-modal-content { background: #fff; max-width: 800px; width: 90%; max-height: 80vh; overflow-y: auto; border-radius: 8px; padding: 40px 30px; position: relative; }
+        .news-modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; color: #999; cursor: pointer; background: none; border: none; }
+        .news-modal-close:hover { color: #333; }
+        .news-modal-title { font-size: 22px; font-weight: bold; color: #333; margin-bottom: 15px; }
+        .news-modal-date { font-size: 14px; color: var(--light-gray); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .news-modal-body { font-size: 15px; color: #555; line-height: 2; }
+
         /* ===== Footer ===== */
         .footer { background: #2c5f9e; color: #fff; padding: 40px 0; }
         .footer .w1400 { display: flex; gap: 40px; }
@@ -516,7 +526,7 @@
     <div class="w1400 flex">
         <div class="cc5a flex wow fadeInLeft">
             <li>
-                <a>
+                <a onclick="openNewsModal('如何实现汽车电子定制化方案的精准定位？','2023-05-01','随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足消费者日益多样化的需求。汽车电子定制化方案的精准定位，需要从以下几个方面入手：<br><br>一、深入了解市场需求<br>精准定位的前提是对市场需求有深入的理解。汽车电子定制化方案需要针对不同市场、不同消费群体的需求特点进行分析，包括功能需求、性能需求、价格需求等多个维度。只有准确把握市场需求，才能制定出有针对性的定制化方案。<br><br>二、技术创新与差异化<br>汽车电子定制化方案的精准定位离不开技术创新。通过引入新技术、新材料、新工艺，实现产品的差异化竞争优势。在智能驾驶、车联网、新能源等领域，技术创新是精准定位的关键驱动力。<br><br>三、用户体验优化<br>精准定位的最终目标是提升用户体验。汽车电子定制化方案应从用户的角度出发，关注人机交互界面设计、操作便捷性、系统响应速度等用户体验要素，确保方案能够真正满足用户的实际使用需求。<br><br>四、成本效益平衡<br>在精准定位的过程中，还需要充分考虑成本效益的平衡。定制化方案不仅要满足技术和功能要求，还要在成本可控的范围内实现最优的性能表现，确保方案的商业可行性。')" style="cursor:pointer">
                     <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/bebae374ea3a0cac304adf7e1bd40e8756185eef.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="如何实现汽车电子定制化方案的精准定位？"></div>
                     <h3>如何实现汽车电子定制化方案的精准定位？</h3>
                     <p>随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足...</p>
@@ -527,7 +537,7 @@
                 </a>
             </li>
             <li>
-                <a>
+                <a onclick="openNewsModal('汽车电子定制化方案，是未来的发展趋势吗？','2023-05-01','汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探讨。<br><br>随着汽车行业的快速发展，消费者对汽车的需求已经不再局限于基本的出行功能，而是更加注重个性化、智能化和舒适化的体验。汽车电子定制化方案正是应这一趋势而生。<br><br>一、个性化需求的增长<br>现代消费者对汽车的个性化需求日益增长，从外观设计到内部配置，从驾驶体验到智能功能，每个环节都有定制化的需求。汽车电子定制化方案能够根据用户的个人喜好和使用习惯，提供量身定制的解决方案。<br><br>二、智能化技术的推动<br>人工智能、大数据、云计算等技术的发展，为汽车电子定制化提供了强大的技术支撑。智能驾驶辅助系统、车联网服务、智能座舱等，都是定制化方案的重要组成部分。<br><br>三、产业链的协同发展<br>汽车电子定制化方案的实现需要整个产业链的协同配合。从芯片供应商到系统集成商，从软件开发商到整车制造商，各环节的紧密合作是定制化方案成功的关键。<br><br>综上所述，汽车电子定制化方案确实是未来的发展趋势，它将深刻改变汽车行业的格局，为消费者带来更加丰富和个性化的出行体验。')">
                     <div class="img com-img"><img src="//cdn.myxypt.com/db68f539/23/05/118af3ad5d79124d3e71b0f518cae3cdc0083d76.png?x-oss-process=image/resize,m_lfit,h_800,w_800" alt="汽车电子定制化方案，是未来的发展趋势吗？"></div>
                     <h3>汽车电子定制化方案，是未来的发展趋势吗？</h3>
                     <p>汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探...</p>
@@ -541,57 +551,49 @@
         <div class="cc5b wow fadeInRight">
             <ul class="xx-news">
                 <li>
-                    <a>
-                        <h3>汽车电子技术对汽车行业的影响有哪些？</h3>
+                    <a onclick="openNewsModal('汽车电子技术对汽车行业的影响有哪些？','2024-04-01','汽车电子技术的发展，深刻地影响着整个汽车行业。它在安全性、舒适性、节能性和智能化等多个方面都带来了革命性的变化。<br><br>在安全性方面，汽车电子技术引入了ABS防抱死系统、ESP车身稳定系统、ADAS高级驾驶辅助系统等，大幅提升了行车安全水平。<br><br>在舒适性方面，智能空调控制、电动座椅调节、高级音响系统等电子配置，让驾驶体验更加舒适便捷。<br><br>在节能性方面，混合动力控制系统、电池管理系统(BMS)等电子技术，有效提高了能源利用效率。<br><br>在智能化方面，自动驾驶技术、车联网技术、智能座舱系统等，正在推动汽车从传统交通工具向智能移动终端转变。')" style="cursor:pointer">
                         <p>2024-04-01 </p>
                         <span><h5>汽车电子技术的发展，深刻地影响着整个汽车行业。它在...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>未来汽车电子领域的创新点在哪里？</h3>
+                    <a onclick="openNewsModal('未来汽车电子领域的创新点在哪里？','2024-04-01','未来汽车电子领域的创新点有很多，其中主要包括以下几个方面：<br><br>一、自动驾驶技术的突破<br>L3到L5级别的自动驾驶技术是未来汽车电子领域最重要的创新方向。<br><br>二、车联网与智能交通<br>V2X通信技术、5G车联网、智能交通管理系统等，将实现车与车、车与路、车与人的全方位互联互通。<br><br>三、新能源电子技术<br>高效电池管理系统、快速充电技术、能量回收系统等新能源电子技术，将持续推动电动汽车的发展。<br><br>四、智能座舱与人机交互<br>语音识别、手势控制、AR-HUD增强现实抬头显示等技术，将重塑人车交互方式。')" style="cursor:pointer">
                         <p>2024-04-01 </p>
                         <span><h5>未来汽车电子领域的创新点有很多，其中主要包括以下几...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>汽车电子和无人驾驶技术之间有何关联？</h3>
+                    <a onclick="openNewsModal('汽车电子和无人驾驶技术之间有何关联？','2024-03-20','汽车电子和无人驾驶技术之间有着密不可分的关联。汽车电子技术是无人驾驶实现的基础和保障。<br><br>首先，无人驾驶需要大量的传感器和电子控制单元来感知周围环境，包括摄像头、雷达、激光雷达等。<br><br>其次，无人驾驶的决策和执行需要强大的电子计算平台，车载计算单元、域控制器等电子硬件是无人驾驶的核心支撑。<br><br>第三，无人驾驶的安全性需要电子系统来保障，冗余控制系统、故障检测与处理系统等确保了无人驾驶的安全运行。<br><br>可以说，没有先进的汽车电子技术，无人驾驶就无法实现。')" style="cursor:pointer">
                         <p>2024-03-20 </p>
                         <span><h5>汽车电子和无人驾驶技术之间有着密不可分的关联。汽...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>未来十年的汽车电子行业会如何发展？</h3>
+                    <a onclick="openNewsModal('未来十年的汽车电子行业会如何发展？','2024-03-20','汽车电子行业是汽车行业中不可或缺的一部分，未来十年将呈现以下发展趋势：<br><br>一、电子化程度持续提升<br>汽车中电子元器件的占比将持续增加，从目前的约30%提升到50%以上。<br><br>二、软件定义汽车<br>软件将成为汽车的核心竞争力，OTA升级、功能订阅等新模式将重塑汽车商业模式。<br><br>三、芯片国产化加速<br>国产汽车芯片将迎来快速发展期，供应链安全和自主可控将成为行业重要战略。<br><br>四、标准化与开放化<br>汽车电子架构将从分布式向集中式演进，域控制器、中央计算平台将成为主流。')" style="cursor:pointer">
                         <p>2024-03-20 </p>
                         <span><h5>汽车电子行业是汽车行业中不可或缺的一部分，随着科...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>汽车电子定制方案个性化驾驶体验的未来之路</h3>
+                    <a onclick="openNewsModal('汽车电子定制方案个性化驾驶体验的未来之路','2024-01-26','汽车电子定制方案是指根据用户个人需求，提供个性化的汽车电子配置和功能组合方案。<br><br>一、AI驱动的自适应系统<br>通过人工智能技术，汽车可以自动学习用户的驾驶习惯和偏好，自动调整座椅位置、空调温度等参数。<br><br>二、沉浸式智能座舱<br>未来的智能座舱将融合AR/VR技术、全息显示、多模态交互等先进技术，打造沉浸式的驾驶体验。<br><br>三、功能订阅与OTA升级<br>用户可以根据需要订阅不同的功能模块，并通过OTA远程升级获取最新的功能和服务。')" style="cursor:pointer">
                         <p>2024-01-26 </p>
                         <span><h5>汽车电子定制方案是指根据用户个人需求，提供个性化...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>汽车电子定制方案是什么？如何实现？</h3>
+                    <a onclick="openNewsModal('汽车电子定制方案是什么？如何实现？','2024-01-26','汽车电子定制方案是根据不同汽车品牌和车型的需要，量身定做的电子系统解决方案。它涵盖了从硬件选型、软件开发、系统集成到测试验证的全过程。<br><br>一、需求分析<br>深入了解客户的具体需求，包括功能需求、性能指标、成本约束等。<br><br>二、方案设计<br>基于需求分析结果，设计最优的电子系统架构和实现方案。<br><br>三、原型开发<br>快速开发原型系统进行验证，确保方案的技术可行性。<br><br>四、量产导入<br>从原型到量产的完整转化过程，包括供应链管理、生产工艺优化等。')" style="cursor:pointer">
                         <p>2024-01-26 </p>
                         <span><h5>汽车电子定制方案是根据不同汽车品牌和车型的需要，...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>汽车电子定制方案：如何全面提升驾驶体验？</h3>
+                    <a onclick="openNewsModal('汽车电子定制方案：如何全面提升驾驶体验？','2023-12-05','在汽车电子领域，提升驾驶体验是一个重要的研发方向。汽车电子定制方案通过以下几个维度全面提升驾驶体验：<br><br>一、安全体验提升<br>ADAS高级驾驶辅助系统、360度全景影像、盲区监测、自动紧急制动等安全功能，让驾驶更加安心。<br><br>二、舒适体验提升<br>智能空调系统、电动座椅记忆、自适应巡航、主动降噪系统等，让长途驾驶不再疲惫。<br><br>三、便捷体验提升<br>无钥匙进入启动、语音控制系统、手机远程控制、自动泊车辅助等，让日常用车更加便捷。<br><br>四、娱乐体验提升<br>高级音响系统、后排娱乐屏、车载Wi-Fi、智能导航等，让出行更加愉悦。')" style="cursor:pointer">
                         <p>2023-12-05 </p>
                         <span><h5>在汽车电子领域，提升驾驶体验是一个重要的研发方向...</h5></span>
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <h3>如何选择适合自己的汽车电子定制方案？</h3>
+                    <a onclick="openNewsModal('如何选择适合自己的汽车电子定制方案？','2023-12-05','汽车电子定制方案在汽车行业的发展中扮演着重要的角色。如何选择适合自己的方案：<br><br>一、明确自身需求<br>首先要明确自己的核心需求是什么：是注重安全性、追求舒适性、还是强调科技感？<br><br>二、了解技术趋势<br>了解当前汽车电子技术的最新发展趋势，有助于做出更具前瞻性的选择。<br><br>三、评估供应商实力<br>选择有丰富行业经验、技术实力强、服务体系完善的供应商。<br><br>四、关注成本效益<br>在功能需求和预算之间找到平衡点，选择性价比最优的方案。')" style="cursor:pointer">
                         <p>2023-12-05 </p>
                         <span><h5>汽车电子定制方案在汽车行业的发展中扮演着重要的角...</h5></span>
                     </a>
@@ -755,6 +757,22 @@
         });
     })();
 
+    // ===== News Modal =====
+    function openNewsModal(title, date, body) {
+        document.getElementById('newsModalTitle').textContent = title;
+        document.getElementById('newsModalDate').textContent = date;
+        document.getElementById('newsModalBody').innerHTML = body;
+        document.getElementById('newsModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeNewsModal() {
+        document.getElementById('newsModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.getElementById('newsModal').addEventListener('click', function(e) {
+        if (e.target === this) closeNewsModal();
+    });
+
     // ===== Back to Top =====
     document.getElementById('backToTop').addEventListener('click', function(e) {
         e.preventDefault();
@@ -772,6 +790,16 @@
         });
     });
 </script>
+
+<!-- News Modal -->
+<div class="news-modal" id="newsModal">
+    <div class="news-modal-content">
+        <button class="news-modal-close" onclick="closeNewsModal()">✕</button>
+        <div class="news-modal-title" id="newsModalTitle"></div>
+        <div class="news-modal-date" id="newsModalDate"></div>
+        <div class="news-modal-body" id="newsModalBody"></div>
+    </div>
+</div>
 
 </body>
 </html>
