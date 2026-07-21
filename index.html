@@ -141,11 +141,17 @@
         .cc3 { padding: 50px 0; background: #f8f8f8; }
         .c3bt { text-align: center; margin-bottom: 30px; }
         .c3bt dd { font-size: 24px; color: var(--blue-dark); }
-        .case-scroll { overflow: hidden; position: relative; }
-        .case-track { display: flex; gap: 20px; animation: scrollLogos 30s linear infinite; }
-        .case-track li { flex: 0 0 180px; display: flex; align-items: center; justify-content: center; height: 80px; background: #fff; border: 1px solid #eee; border-radius: 4px; padding: 10px; }
-        .case-track li img { max-width: 140px; max-height: 50px; object-fit: contain; }
-        @keyframes scrollLogos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .client-slider { overflow: hidden; position: relative; }
+        .client-slider-inner { display: flex; transition: transform 0.5s ease; }
+        .client-card { flex: 0 0 calc((100% - 100px) / 6); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; margin: 0 10px; transition: all 0.3s; }
+        .client-card:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(44,95,158,0.15); }
+        .client-card .img { height: 130px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; padding: 10px; }
+        .client-card .img img { max-width: 90%; max-height: 110px; object-fit: contain; }
+        .client-card h3 { text-align: center; padding: 10px 8px; font-size: 14px; color: #333; border-top: 1px solid #eee; background: #fff; }
+        .client-nav { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+        .client-nav-btn { width: 36px; height: 36px; background: var(--blue-dark); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; font-size: 16px; transition: 0.3s; border: none; }
+        .client-nav-btn:hover { background: var(--blue); }
+        .c3mor { display: block; text-align: center; padding: 15px 0; margin-top: 15px; color: var(--blue); font-size: 14px; }
 
         /* ===== News ===== */
         .cc5 { padding: 50px 0; }
@@ -466,27 +472,37 @@
 <div class="cc3 wow fadeInUp" id="clients">
     <div class="c3bt"><dd>服务客户</dd></div>
     <div class="w1500">
-        <div class="case-scroll">
-            <ul class="case-track" id="clientTrack">
-                <!-- First set -->
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
-                <!-- Duplicate set for seamless scroll -->
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/726ed23c91dc045bea2aaab05470fbd8ebfcecdf.png" alt="客户1"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/52e3c621a2297ab571dd6236d9aec5880e35a094.png" alt="客户2"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/ea7f62ed6d214650bddfdeebf4b7025853f09008.png" alt="客户3"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0c582af4c66472075b89f0ee90fd6b9ca92d9af1.png" alt="客户4"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/0128b7c086ff8e5e1b60cf093bec970d11193526.png" alt="客户5"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/29a78d3b3b8555c8bf3cde1eea22926d32ebfd6a.png" alt="客户6"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/03/268130e5f77a179a1095c911d843803a89a263a7.png" alt="客户7"></li>
-                <li><img src="//cdn.myxypt.com/db68f539/23/05/5f5fe8a5b261b594639fc932a70749c29304ccb9.png" alt="客户8"></li>
-            </ul>
+        <div class="client-slider" id="clientSlider">
+            <div class="client-slider-inner" id="clientSliderInner">
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/7badeaf30f4d425cb0bb2f1d2f3540daeda477a9.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="中国中车"></div>
+                    <h3>中国中车</h3>
+                </div>
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/c5628fb5830e0977de411b2829beec64c0e6b588.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="长城汽车"></div>
+                    <h3>长城汽车</h3>
+                </div>
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/3cda857195e27f024bed3ad61f2cb9319950c477.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="广汽集团"></div>
+                    <h3>广汽集团</h3>
+                </div>
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/8dd9c1201721ff20257d055fbfdd6c34b73008fb.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="小鹏汽车"></div>
+                    <h3>小鹏汽车</h3>
+                </div>
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/45943ade1f2120dacdc8938e30db5d658c0aead0.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="奇瑞汽车"></div>
+                    <h3>奇瑞汽车</h3>
+                </div>
+                <div class="client-card">
+                    <div class="img"><img src="//cdn.myxypt.com/db68f539/23/05/35580b23de3965bac77d5e0a5dac31fb9307e9bb.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400" alt="长安汽车"></div>
+                    <h3>长安汽车</h3>
+                </div>
+            </div>
+        </div>
+        <div class="client-nav">
+            <button class="client-nav-btn" onclick="slideClients(-1)">←</button>
+            <button class="client-nav-btn" onclick="slideClients(1)">→</button>
         </div>
     </div>
 </div>
@@ -703,6 +719,40 @@
             });
         }, { threshold: 0.1 });
         wowElements.forEach(el => observer.observe(el));
+    })();
+
+    // ===== Client Slider =====
+    (function() {
+        const inner = document.getElementById('clientSliderInner');
+        const slider = document.getElementById('clientSlider');
+        let clientOffset = 0;
+        const cardWidth = inner.querySelector('.client-card').offsetWidth + 20; // card width + margin
+        const totalCards = inner.children.length;
+        const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+        const maxOffset = Math.max(0, (totalCards - visibleCards) * cardWidth);
+
+        window.slideClients = function(dir) {
+            clientOffset += dir * cardWidth * 2; // slide 2 cards at a time
+            if (clientOffset < 0) clientOffset = 0;
+            if (clientOffset > maxOffset) clientOffset = maxOffset;
+            inner.style.transform = 'translateX(-' + clientOffset + 'px)';
+        };
+
+        // Auto slide every 3 seconds
+        let autoSlide = setInterval(function() {
+            clientOffset += cardWidth;
+            if (clientOffset > maxOffset) clientOffset = 0;
+            inner.style.transform = 'translateX(-' + clientOffset + 'px)';
+        }, 3000);
+
+        slider.addEventListener('mouseenter', function() { clearInterval(autoSlide); });
+        slider.addEventListener('mouseleave', function() {
+            autoSlide = setInterval(function() {
+                clientOffset += cardWidth;
+                if (clientOffset > maxOffset) clientOffset = 0;
+                inner.style.transform = 'translateX(-' + clientOffset + 'px)';
+            }, 3000);
+        });
     })();
 
     // ===== Back to Top =====
