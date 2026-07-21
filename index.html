@@ -69,9 +69,9 @@
         .x-banner { overflow: hidden; position: relative; }
         .banner-carousel { position: relative; overflow: hidden; }
         .banner-track { display: flex; transition: transform 0.6s ease; }
-        .banner-item { flex: 0 0 100%; position: relative; }
-        .banner-item { min-height: 400px; display: flex; align-items: center; justify-content: center; }
-        .banner-text { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; z-index: 5; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .banner-item { flex: 0 0 100%; position: relative; overflow: hidden; }
+        .banner-item img { width: 100%; height: auto; min-height: 400px; object-fit: cover; }
+        .banner-text { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; z-index: 5; text-shadow: 0 2px 8px rgba(0,0,0,0.5); background: rgba(0,0,0,0.25); }
         .banner-text h2 { font-size: 42px; margin-bottom: 15px; letter-spacing: 4px; }
         .banner-text p { font-size: 20px; letter-spacing: 2px; }
         .banner-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
@@ -90,7 +90,7 @@
         .cc4 { padding: 40px 0 60px; background: var(--blue-bg); }
         .cc4 .w1400 { display: flex; gap: 40px; align-items: stretch; }
         .c4img { flex: 0 0 45%; overflow: hidden; border-radius: 8px; }
-        .c4img .about-placeholder { width: 100%; height: 100%; min-height: 320px; background: linear-gradient(135deg, #2c5f9e 0%, #5a9bd5 50%, #337ab7 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 60px; letter-spacing: 8px; }
+        .c4img img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 8px; }
         .c4ab { flex: 1; }
         .c4ab h3 { font-size: 22px; color: var(--blue-dark); margin-bottom: 10px; }
         .c4ab h4 { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
@@ -114,8 +114,7 @@
         .pro_list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
         .pro_list li .com-img { display: block; overflow: hidden; height: 200px; }
         .pro_list li .com-img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .pro_list li .prod-placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; letter-spacing: 2px; transition: 0.3s; }
-        .pro_list li:hover .prod-placeholder { transform: scale(1.05); }
+        .pro_list li:hover .com-img img { transform: scale(1.05); }
         .pro_list li h2 { padding: 12px 10px; font-size: 15px; text-align: center; }
         .pro_list li h2 a { color: #333; transition: 0.3s; }
         .pro_list li h2 a:hover { color: var(--blue); }
@@ -139,8 +138,7 @@
         .c2dhb { display: inline-block; padding: 10px 25px; background: var(--orange); color: #fff; font-size: 15px; border-radius: 4px; transition: 0.3s; }
         .c2dhb:hover { background: #e55e00; }
         .c2b { flex: 0 0 40%; border-radius: 8px; overflow: hidden; }
-        .c2b .adv-placeholder { width: 100%; min-height: 380px; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); display: flex; align-items: center; justify-content: center; }
-        .c2b .adv-placeholder svg { width: 180px; height: 180px; opacity: 0.3; }
+        .c2b img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; border-radius: 8px; }
 
         /* ===== Service Clients ===== */
         .cc3 { padding: 50px 0; background: #f8f8f8; }
@@ -150,8 +148,8 @@
         .client-slider-inner { display: flex; transition: transform 0.5s ease; }
         .client-card { flex: 0 0 calc((100% - 100px) / 6); background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; margin: 0 10px; transition: all 0.3s; }
         .client-card:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(44,95,158,0.15); }
-        .client-card .img { height: 130px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; }
-        .client-card .img svg { width: 80px; height: 80px; }
+        .client-card .img { height: 130px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; padding: 10px; }
+        .client-card .img img { max-width: 90%; max-height: 110px; object-fit: contain; }
         .client-card .img .client-logo-text { font-size: 32px; font-weight: bold; color: var(--blue-dark); letter-spacing: 4px; }
         .client-card h3 { text-align: center; padding: 10px 8px; font-size: 14px; color: #333; border-top: 1px solid #eee; background: #fff; }
         .client-nav { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
@@ -170,8 +168,7 @@
         .cc5a li a:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .cc5a li .img { overflow: hidden; height: 200px; }
         .cc5a li .img img { width: 100%; height: 200px; object-fit: cover; transition: 0.3s; }
-        .cc5a li .img .news-placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; letter-spacing: 2px; transition: 0.3s; }
-        .cc5a li a:hover .news-placeholder { transform: scale(1.05); }
+        .cc5a li a:hover .img img { transform: scale(1.05); }
         .cc5a li h3 { padding: 12px 15px 5px; font-size: 16px; color: #333; }
         .cc5a li p { padding: 0 15px; font-size: 13px; color: var(--gray); line-height: 1.5; }
         .cc5a li .lirq { display: flex; justify-content: space-between; padding: 10px 15px; font-size: 12px; color: var(--light-gray); }
@@ -232,7 +229,7 @@
             .x-menu { flex-wrap: wrap; justify-content: center; }
             .x-menu > li > a { padding: 8px 12px; font-size: 13px; }
             .x-sub-menu { display: none !important; }
-            .banner-item { min-height: 200px; }
+            .banner-item img { min-height: 200px; }
             .banner-text h2 { font-size: 24px; }
             .banner-text p { font-size: 14px; }
             .cc4 .w1400 { flex-direction: column; }
@@ -321,15 +318,9 @@
 <div class="x-banner">
     <div class="banner-carousel" id="bannerCarousel">
         <div class="banner-track">
-            <div class="banner-item" style="background:linear-gradient(135deg,#1a3d6d 0%,#2c5f9e 40%,#5a9bd5 100%);">
-                <div class="banner-text"><h2>武汉朔丰电子科技有限公司</h2><p>专注于汽车电子应用市场解决方案</p></div>
-            </div>
-            <div class="banner-item" style="background:linear-gradient(135deg,#337ab7 0%,#ff6600 50%,#5a9bd5 100%);">
-                <div class="banner-text"><h2>汽车电子 · 工业控制</h2><p>致力于为客户提供有竞争力的产品及全方位高质量服务</p></div>
-            </div>
-            <div class="banner-item" style="background:linear-gradient(135deg,#2c5f9e 0%,#1a3d6d 50%,#337ab7 100%);">
-                <div class="banner-text"><h2>深耕产品应用技术</h2><p>车身控制 · 电机控制器 · BMS · ADAS</p></div>
-            </div>
+            <div class="banner-item"><img src="img/banner1.jpg" alt="汽车电子技术"><div class="banner-text"><h2>武汉朔丰电子科技有限公司</h2><p>专注于汽车电子应用市场解决方案</p></div></div>
+            <div class="banner-item"><img src="img/banner2.jpg" alt="工业自动化"><div class="banner-text"><h2>汽车电子 · 工业控制</h2><p>致力于为客户提供有竞争力的产品及全方位高质量服务</p></div></div>
+            <div class="banner-item"><img src="img/banner3.jpg" alt="电路板技术"><div class="banner-text"><h2>深耕产品应用技术</h2><p>车身控制 · 电机控制器 · BMS · ADAS</p></div></div>
         </div>
         <div class="banner-dots" id="bannerDots">
             <div class="banner-dot active" data-index="0"></div>
@@ -350,16 +341,7 @@
         <div class="cc4 wow fadeInUp">
             <div class="w1400 clearfix">
                 <div class="c4img">
-                    <div class="about-placeholder">
-                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:120px;opacity:0.4;">
-                            <rect x="40" y="60" width="120" height="80" rx="8" stroke="#fff" stroke-width="2"/>
-                            <circle cx="80" cy="95" r="15" stroke="#fff" stroke-width="2"/>
-                            <path d="M110 80 L140 110" stroke="#fff" stroke-width="2"/>
-                            <path d="M110 110 L140 80" stroke="#fff" stroke-width="2"/>
-                            <rect x="60" y="40" width="80" height="20" rx="4" stroke="#fff" stroke-width="2"/>
-                            <circle cx="100" cy="50" r="5" fill="#fff" opacity="0.5"/>
-                        </svg>
-                    </div>
+                    <img src="img/about.jpg" alt="电子研发团队">
                 </div>
                 <div class="c4ab">
                     <h3>武汉朔丰电子科技有限公司</h3>
@@ -387,27 +369,27 @@
                 <div class="tab-main active">
                     <ul class="pro_list">
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#5a9bd5);">摩托车PKG</div></a>
+                            <a class="com-img"><img src="img/prod_motorcycle_pkg.jpg" alt="摩托车PKG方案"></a>
                             <h2><a>可量产的摩托车PKG方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#5a9bd5);">PEPS</div></a>
+                            <a class="com-img"><img src="img/prod_peps.jpg" alt="PEPS方案"></a>
                             <h2><a>可量产的PEPS方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#337ab7);">氛围灯</div></a>
+                            <a class="com-img"><img src="img/prod_ambient_light.jpg" alt="氛围灯方案"></a>
                             <h2><a>可量产的氛围灯方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#ff6600);">数字钥匙NFC</div></a>
+                            <a class="com-img"><img src="img/prod_nfc_key.jpg" alt="数字钥匙NFC方案"></a>
                             <h2><a>可量产的数字钥匙NFC方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#2c5f9e);">LED灯光驱动</div></a>
+                            <a class="com-img"><img src="img/prod_led_driver.jpg" alt="LED灯光驱动方案"></a>
                             <h2><a>汽车LED灯光驱动方案</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#5a9bd5);">FOC电机驱动</div></a>
+                            <a class="com-img"><img src="img/prod_foc_motor.jpg" alt="FOC驱动方案"></a>
                             <h2><a>无刷电机FOC驱动方案</a></h2>
                         </li>
                     </ul>
@@ -416,27 +398,27 @@
                 <div class="tab-main">
                     <ul class="pro_list">
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#337ab7);">PLC智能网关</div></a>
+                            <a class="com-img"><img src="img/prod_plc_gateway.jpg" alt="PLC智能网关"></a>
                             <h2><a>电力线载波PLC智能网关</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#ff6600);">数据接口屏</div></a>
+                            <a class="com-img"><img src="img/prod_display.jpg" alt="无线数据接口显示屏"></a>
                             <h2><a>无线数据接口显示屏</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#5a9bd5);">无线测温</div></a>
+                            <a class="com-img"><img src="img/prod_temp_sensor.jpg" alt="智能无线测温系统"></a>
                             <h2><a>智能无线测温系统</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#337ab7);">5G路由器</div></a>
+                            <a class="com-img"><img src="img/prod_5g_router.jpg" alt="5G工业路由器"></a>
                             <h2><a>5G工业路由器</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#337ab7,#1a3d6d);">工业电控</div></a>
+                            <a class="com-img"><img src="img/prod_industrial_ctrl1.jpg" alt="工业电控"></a>
                             <h2><a>工业电控</a></h2>
                         </li>
                         <li>
-                            <a class="com-img"><div class="prod-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#2c5f9e);">工业电控</div></a>
+                            <a class="com-img"><img src="img/prod_industrial_ctrl2.jpg" alt="工业电控"></a>
                             <h2><a>工业电控</a></h2>
                         </li>
                     </ul>
@@ -486,16 +468,7 @@
             </div>
         </div>
         <div class="c2b">
-            <div class="adv-placeholder">
-                <svg viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="2" opacity="0.15">
-                    <rect x="30" y="50" width="140" height="100" rx="12"/>
-                    <circle cx="70" cy="90" r="20"/>
-                    <rect x="100" y="70" width="50" height="60" rx="4"/>
-                    <path d="M110 85 L140 85 M110 95 L140 95 M110 105 L130 105"/>
-                    <circle cx="100" cy="50" r="15"/>
-                    <path d="M100 35 L100 65 M85 50 L115 50"/>
-                </svg>
-            </div>
+            <img src="img/advantages.jpg" alt="电子技术优势">
         </div>
     </div>
 </div>
@@ -507,27 +480,27 @@
         <div class="client-slider" id="clientSlider">
             <div class="client-slider-inner" id="clientSliderInner">
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">中车</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/CRRC_logo.svg/200px-CRRC_logo.svg.png" alt="中国中车" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>中车</span>'"></div>
                     <h3>中国中车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">长城</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/GWM_logo.svg/200px-GWM_logo.svg.png" alt="长城汽车" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>长城</span>'"></div>
                     <h3>长城汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">广汽</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/GAC_Group_logo.svg/200px-GAC_Group_logo.svg.png" alt="广汽集团" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>广汽</span>'"></div>
                     <h3>广汽集团</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">小鹏</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Xpeng_logo.svg/200px-Xpeng_logo.svg.png" alt="小鹏汽车" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>小鹏</span>'"></div>
                     <h3>小鹏汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">奇瑞</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Chery_logo.svg/200px-Chery_logo.svg.png" alt="奇瑞汽车" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>奇瑞</span>'"></div>
                     <h3>奇瑞汽车</h3>
                 </div>
                 <div class="client-card">
-                    <div class="img"><span class="client-logo-text">长安</span></div>
+                    <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Changan_Auto_logo.svg/200px-Changan_Auto_logo.svg.png" alt="长安汽车" onerror="this.parentElement.innerHTML='<span class=\'client-logo-text\'>长安</span>'"></div>
                     <h3>长安汽车</h3>
                 </div>
             </div>
@@ -549,7 +522,7 @@
         <div class="cc5a flex wow fadeInLeft">
             <li>
                 <a href="news1.html">
-                    <div class="img com-img"><div class="news-placeholder" style="background:linear-gradient(135deg,#2c5f9e,#5a9bd5);">汽车电子定制化</div></div>
+                    <div class="img com-img"><img src="img/news1.jpg" alt="汽车电子定制化"></div>
                     <h3>如何实现汽车电子定制化方案的精准定位？</h3>
                     <p>随着科技的不断进步和市场竞争的加剧，汽车制造商们越来越注重定制化方案的开发和设计，以满足...</p>
                     <div class="lirq clearfix">
@@ -560,7 +533,7 @@
             </li>
             <li>
                 <a href="news2.html">
-                    <div class="img com-img"><div class="news-placeholder" style="background:linear-gradient(135deg,#1a3d6d,#337ab7);">未来发展趋势</div></div>
+                    <div class="img com-img"><img src="img/news2.jpg" alt="未来发展趋势"></div>
                     <h3>汽车电子定制化方案，是未来的发展趋势吗？</h3>
                     <p>汽车电子定制化方案，是未来的发展趋势吗？这是一个非常重要和有趣的问题，让我们来一起深入探...</p>
                     <div class="lirq clearfix">
